@@ -118,11 +118,18 @@ it never dumps history.
 Edit in `nflbot/feeds.py`. Only feeds confirmed to return live content are
 listed — the bot runs against these.
 
-**Confirmed working (national):** ESPN, ProFootballTalk, Yahoo Sports
+**Nationals-only launch.** `FEEDS` is the national set confirmed working on the
+latest verify run:
 
-The USA TODAY "Wire" per-team feeds and the NFL.com feed previously listed here
-were all returning no entries (dead) and have been removed rather than left as
-dead URLs.
+- ProFootballTalk, Yahoo Sports, Pro Football Rumors, CBS Sports NFL — confirmed working
+- ESPN — kept in but **on watch**: it returned empty (HTTP 202) on the latest run
+  though it has worked before. The bot skips empty feeds gracefully; drop it if it
+  stays empty.
+
+The USA TODAY "Wire" per-team feeds, NFL.com, and the Reddit/SI team-beat
+candidates all returned no entries from the runner and are not included (dead
+URLs dropped rather than left in). Per-team coverage can be added later once
+working feeds are found.
 
 ### Adding / verifying feeds
 

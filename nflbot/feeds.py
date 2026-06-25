@@ -2,16 +2,16 @@
 
 The source of news is public RSS feeds (free to read), not the X API.
 
-Only feeds confirmed to return live content are listed in ``FEEDS`` — the bot
-runs against these. The USA TODAY "Wire" per-team feeds and the NFL.com feed
-that were here previously were all returning no entries (the ``*.usatoday.com``
-/feed/ pattern and ``nfl.com/feeds/rss/news`` are dead from the runner), so they
-have been removed rather than left as dead URLs.
+Nationals-only launch. ``FEEDS`` lists the national feeds confirmed working on
+the latest "Verify feeds" run; the bot runs against these. The USA TODAY "Wire"
+per-team feeds, NFL.com, and the Reddit/SI team-beat candidates all returned no
+usable entries from the runner, so none are included — dead URLs are dropped
+rather than left in.
 
-To add more feeds — especially per-team beat coverage — run the "Verify feeds"
-GitHub Actions workflow (it fetches candidate feeds from the runner, which has
-real network, and prints which return content), then promote the working ones
-here. See scripts/verify_feeds.py.
+To add per-team beat coverage later, run the "Verify feeds" GitHub Actions
+workflow (it fetches candidate feeds from the runner, which has real network,
+and prints which return content), then promote the working ones here. See
+scripts/verify_feeds.py.
 
 Each feed is (outlet_label, url, is_national). ``outlet_label`` is what gets
 credited in the post ("via ESPN").
@@ -26,11 +26,17 @@ from dataclasses import dataclass
 log = logging.getLogger(__name__)
 
 # (outlet label, feed url, is_national)
-# Confirmed working in production. Add verified feeds via scripts/verify_feeds.py.
+# Nationals-only launch. Add verified team feeds later via scripts/verify_feeds.py.
 FEEDS: list[tuple[str, str, bool]] = [
+    # NOTE: ESPN returned empty (HTTP 202) on the latest verify run, though it
+    # has worked before. Kept in deliberately so we can watch it; if it stays
+    # empty it can be dropped. The bot already skips empty/dead feeds gracefully.
     ("ESPN", "https://www.espn.com/espn/rss/nfl/news", True),
+    # Confirmed working on the latest verify run:
     ("ProFootballTalk", "https://profootballtalk.nbcsports.com/feed/", True),
     ("Yahoo Sports", "https://sports.yahoo.com/nfl/rss/", True),
+    ("Pro Football Rumors", "https://www.profootballrumors.com/feed", True),
+    ("CBS Sports NFL", "https://www.cbssports.com/rss/headlines/nfl/", True),
 ]
 
 _USER_AGENT = "nfl-news-bot/1.0 (+https://github.com/jsfletch92/nfl-news-bot)"
