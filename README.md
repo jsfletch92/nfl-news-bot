@@ -115,15 +115,30 @@ it never dumps history.
 
 ## Feed list
 
-Edit in `nflbot/feeds.py`. National outlets are credited by name; team feeds use
-the "Wire" beat network (one per franchise).
+Edit in `nflbot/feeds.py`. Only feeds confirmed to return live content are
+listed — the bot runs against these.
 
-**National:** ESPN, NFL.com, ProFootballTalk, Yahoo Sports
+**Confirmed working (national):** ESPN, ProFootballTalk, Yahoo Sports
 
-**Team beats (USA TODAY "Wire"):** Cardinals, Falcons, Ravens, Bills, Panthers,
-Bears, Bengals, Browns, Cowboys, Broncos, Lions, Packers, Texans, Colts,
-Jaguars, Chiefs, Raiders, Chargers, Rams, Dolphins, Vikings, Patriots, Saints,
-Giants, Jets, Eagles, Steelers, Niners, Seahawks, Buccaneers, Titans, Commanders
+The USA TODAY "Wire" per-team feeds and the NFL.com feed previously listed here
+were all returning no entries (dead) and have been removed rather than left as
+dead URLs.
+
+### Adding / verifying feeds
+
+Feed liveness can only be checked from an environment with real outbound network
+(the Actions runner), so there's a diagnostic workflow for it:
+
+1. Actions tab → **Verify feeds** → **Run workflow**.
+2. It fetches each candidate in `scripts/verify_feeds.py` and prints a table:
+   `STATUS | N | NEWEST | OUTLET | URL`.
+3. Promote the feeds that return content into `FEEDS` in `nflbot/feeds.py`; drop
+   the rest.
+
+The candidate list probes several families of per-team beat source (USA TODAY
+Wire variants, Reddit team subs, SI team sites) with sample teams, so one run
+reveals which family works from the runner's IP — then expand the winner to all
+32 teams.
 
 ---
 

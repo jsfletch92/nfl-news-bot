@@ -1,13 +1,20 @@
 """NFL RSS feed list and fetching.
 
-The source of news is now public RSS feeds (free to read), not the X API. The
-list below aims for broad, all-32-teams coverage: a handful of national outlets
-for headline news plus a team-level "Wire" beat feed for every franchise, which
-is where granular camp/roster detail shows up. Refine the list as needed — the
-bot tolerates individual feeds being unreachable or returning junk.
+The source of news is public RSS feeds (free to read), not the X API.
+
+Only feeds confirmed to return live content are listed in ``FEEDS`` — the bot
+runs against these. The USA TODAY "Wire" per-team feeds and the NFL.com feed
+that were here previously were all returning no entries (the ``*.usatoday.com``
+/feed/ pattern and ``nfl.com/feeds/rss/news`` are dead from the runner), so they
+have been removed rather than left as dead URLs.
+
+To add more feeds — especially per-team beat coverage — run the "Verify feeds"
+GitHub Actions workflow (it fetches candidate feeds from the runner, which has
+real network, and prints which return content), then promote the working ones
+here. See scripts/verify_feeds.py.
 
 Each feed is (outlet_label, url, is_national). ``outlet_label`` is what gets
-credited in the post ("via ESPN", "via Colts Wire").
+credited in the post ("via ESPN").
 """
 
 from __future__ import annotations
@@ -19,45 +26,11 @@ from dataclasses import dataclass
 log = logging.getLogger(__name__)
 
 # (outlet label, feed url, is_national)
+# Confirmed working in production. Add verified feeds via scripts/verify_feeds.py.
 FEEDS: list[tuple[str, str, bool]] = [
-    # --- National / league-wide headline news ---
     ("ESPN", "https://www.espn.com/espn/rss/nfl/news", True),
-    ("NFL.com", "https://www.nfl.com/feeds/rss/news", True),
     ("ProFootballTalk", "https://profootballtalk.nbcsports.com/feed/", True),
     ("Yahoo Sports", "https://sports.yahoo.com/nfl/rss/", True),
-    # --- Team-level beat feeds (USA TODAY "Wire" network), one per team ---
-    ("Cardinals Wire", "https://cardswire.usatoday.com/feed/", False),
-    ("Falcons Wire", "https://thefalconswire.usatoday.com/feed/", False),
-    ("Ravens Wire", "https://ravenswire.usatoday.com/feed/", False),
-    ("Bills Wire", "https://billswire.usatoday.com/feed/", False),
-    ("Panthers Wire", "https://pantherswire.usatoday.com/feed/", False),
-    ("Bears Wire", "https://bearswire.usatoday.com/feed/", False),
-    ("Bengals Wire", "https://bengalswire.usatoday.com/feed/", False),
-    ("Browns Wire", "https://brownswire.usatoday.com/feed/", False),
-    ("Cowboys Wire", "https://cowboyswire.usatoday.com/feed/", False),
-    ("Broncos Wire", "https://broncoswire.usatoday.com/feed/", False),
-    ("Lions Wire", "https://lionswire.usatoday.com/feed/", False),
-    ("Packers Wire", "https://packerswire.usatoday.com/feed/", False),
-    ("Texans Wire", "https://texanswire.usatoday.com/feed/", False),
-    ("Colts Wire", "https://coltswire.usatoday.com/feed/", False),
-    ("Jaguars Wire", "https://jaguarswire.usatoday.com/feed/", False),
-    ("Chiefs Wire", "https://chiefswire.usatoday.com/feed/", False),
-    ("Raiders Wire", "https://raiderswire.usatoday.com/feed/", False),
-    ("Chargers Wire", "https://chargerswire.usatoday.com/feed/", False),
-    ("Rams Wire", "https://ramswire.usatoday.com/feed/", False),
-    ("Dolphins Wire", "https://dolphinswire.usatoday.com/feed/", False),
-    ("Vikings Wire", "https://vikingswire.usatoday.com/feed/", False),
-    ("Patriots Wire", "https://patriotswire.usatoday.com/feed/", False),
-    ("Saints Wire", "https://saintswire.usatoday.com/feed/", False),
-    ("Giants Wire", "https://giantswire.usatoday.com/feed/", False),
-    ("Jets Wire", "https://jetswire.usatoday.com/feed/", False),
-    ("Eagles Wire", "https://eagleswire.usatoday.com/feed/", False),
-    ("Steelers Wire", "https://steelerswire.usatoday.com/feed/", False),
-    ("Niners Wire", "https://ninerswire.usatoday.com/feed/", False),
-    ("Seahawks Wire", "https://seahawkswire.usatoday.com/feed/", False),
-    ("Buccaneers Wire", "https://buccaneerswire.usatoday.com/feed/", False),
-    ("Titans Wire", "https://titanswire.usatoday.com/feed/", False),
-    ("Commanders Wire", "https://commanderswire.usatoday.com/feed/", False),
 ]
 
 _USER_AGENT = "nfl-news-bot/1.0 (+https://github.com/jsfletch92/nfl-news-bot)"
