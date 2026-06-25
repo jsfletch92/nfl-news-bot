@@ -6,7 +6,12 @@ on:
   schedule:
     # Every 15 minutes. Adjust to taste / your X API rate tier.
     - cron: "*/15 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (log what would be posted without posting)"
+        type: boolean
+        default: true
 
 # Allow the job to push the updated state file back to the branch.
 permissions:
@@ -39,6 +44,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           # Optional: override the model (defaults to claude-haiku-4-5).
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          # Manual runs honour the dry_run input; scheduled runs leave this empty
+          # (live). The bot treats true/1/yes as a dry run.
+          DRY_RUN: ${{ inputs.dry_run }}
         run: python -m nflbot.bot
 
       - name: Commit updated state
