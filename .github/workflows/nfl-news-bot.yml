@@ -50,6 +50,9 @@ jobs:
         run: python -m nflbot.bot
 
       - name: Commit updated state
+        # Skip on manual dry runs so repeated test runs see the same items each
+        # time. Scheduled runs (empty input) and manual live runs still commit.
+        if: ${{ inputs.dry_run != 'true' }}
         run: |
           if [[ -n "$(git status --porcelain state.json)" ]]; then
             git config user.name "nfl-news-bot"
