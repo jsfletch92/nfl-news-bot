@@ -63,8 +63,11 @@ class Config:
             x_access_token_secret=_require("X_ACCESS_TOKEN_SECRET"),
             anthropic_api_key=_require("ANTHROPIC_API_KEY"),
             # Cheap, fast model is the right fit for this high-frequency,
-            # lightweight classify/summarise/rank workload.
-            anthropic_model=os.environ.get("ANTHROPIC_MODEL", "claude-haiku-4-5"),
+            # lightweight classify/summarise/rank workload. Use ``or`` rather
+            # than a get() default so an unset *or* empty ANTHROPIC_MODEL (the
+            # workflow passes "" when the repo variable isn't set) falls back to
+            # the default instead of sending an empty model string to the API.
+            anthropic_model=(os.environ.get("ANTHROPIC_MODEL") or "").strip() or "claude-haiku-4-5",
             max_items_per_feed=int(os.environ.get("MAX_ITEMS_PER_FEED", "25")),
             max_posts_per_day=int(os.environ.get("MAX_POSTS_PER_DAY", "10")),
             story_similarity_threshold=float(
