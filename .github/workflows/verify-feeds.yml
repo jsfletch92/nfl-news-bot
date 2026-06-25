@@ -1,0 +1,20 @@
+name: Verify feeds
+
+# Manually-triggered diagnostic: fetches every candidate RSS feed from the
+# runner (which has real outbound network) and prints which return content.
+# Use the output to decide which feeds to keep in nflbot/feeds.py.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Verify candidate feeds
+        run: python scripts/verify_feeds.py
