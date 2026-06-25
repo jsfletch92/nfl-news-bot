@@ -32,13 +32,12 @@ jobs:
 
       - name: Run bot
         env:
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Optional: override the summarisation model (defaults to claude-opus-4-8).
+          # Optional: override the model (defaults to claude-haiku-4-5).
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
         run: python -m nflbot.bot
 

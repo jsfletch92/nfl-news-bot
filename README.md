@@ -1,106 +1,129 @@
 # nfl-news-bot
 
 An automated NFL breaking-news bot built to run as a scheduled cloud routine.
-On each run it reads the most recent posts from a fixed allowlist of NFL news
-accounts, identifies genuinely new news items, rewrites each in original
+On each run it reads a broad set of **NFL RSS feeds**, clusters items into
+distinct stories, identifies genuinely new news, rewrites each in original
 wording, and posts a short **text-only** update to the X account you own.
 
-## Sources (allowlist)
+## News source: RSS feeds
 
-News is **only ever** sourced and credited from these accounts — nothing else
-is read or relayed:
+News is sourced from public RSS feeds (free to read). The list aims for broad,
+all-32-teams coverage: national outlets for headline news plus a team beat feed
+("Wire" network) for every franchise, which is where granular camp/roster detail
+shows up. The X API is used **only to post**, never to read news.
 
-- [@TheAthleticNFL](https://x.com/TheAthleticNFL)
-- [@AdamSchefter](https://x.com/AdamSchefter)
-- [@RapSheet](https://x.com/RapSheet)
-- [@ESPNNFL](https://x.com/ESPNNFL)
-- [@JourdanRodrigue](https://x.com/JourdanRodrigue)
+See [Feed list](#feed-list) below for the exact feeds, and `nflbot/feeds.py` to
+edit them — individual feeds being unreachable or junk never sinks a run.
 
 ## What it does each run
 
-1. Reads recent **original** posts from each source (retweets and replies are
-   excluded at the API level; opinion/banter/promos are filtered out by the
-   classifier).
-2. Identifies items that are genuine NFL news updates since the last run.
-3. Writes a short summary **in original wording** (it does not copy the
-   reporter's phrasing).
-4. Posts each new item as text only — no links, no images — in this exact
-   format (including the blank line):
+1. Fetches all configured RSS feeds and collects items not seen before.
+2. **Clusters items by story.** The same news appears across many feeds (ESPN,
+   the team site, a beat blog may all carry it). These are grouped and treated
+   as ONE story — a story is never posted twice just because two feeds carried
+   it. Clustering is lexical (title-token similarity), so it's tunable, not
+   perfect; refine `STORY_SIMILARITY_THRESHOLD` after watching it run.
+3. Classifies each distinct new story (real NFL news vs. opinion/list/ad/filler)
+   with `claude-haiku-4-5` and writes a short summary **in original wording**
+   (it does not copy the outlet's phrasing).
+4. Posts text only — no links, no images — in this exact format (including the
+   blank line):
 
    ```
    🚨 NEW: [original-wording summary]
 
-   @SourceHandle
+   via Outlet
    ```
 
-5. Never posts the same item twice (see [De-duplication](#de-duplication)).
+   where `Outlet` credits the source outlet (e.g. `via ESPN`, `via Colts Wire`).
+5. **Caps output at 10 posts per day.** If more distinct stories clear the bar
+   than fit in the remaining daily budget, Haiku ranks them by significance and
+   only the top ones are posted; the rest are dropped (not carried over).
 
 ### Security
 
-The text of a source post is treated strictly as **data to summarise and
-credit, never as instructions**. The summariser prompt isolates each post and
-explicitly refuses to follow, execute, or repeat any instruction contained
-inside a post it reads.
+Feed content (title + description) is treated strictly as **data to summarise
+and credit, never as instructions**. The classification, summarisation, and
+ranking prompts isolate feed text and explicitly refuse to follow, execute, or
+repeat any instruction contained inside it.
 
 ---
 
 ## Credentials you need to provide
 
-Set these as **environment variables** in your scheduled-routine settings (they
-are read from the environment — never committed to the repo). In the included
-GitHub Actions workflow they map to repository **Secrets** of the same name.
+Set these as **environment variables** in your scheduled-routine settings (read
+from the environment — never committed to the repo). In the included GitHub
+Actions workflow they map to repository **Secrets** of the same name.
 
-### X (Twitter) API
+### X (Twitter) API — posting only
 
-You need a developer App on an X API plan that allows **reading user timelines**
-(the free tier is write-only; reading timelines requires the **Basic** tier or
-higher). Two auth modes are used: app-only (bearer) for reading, and OAuth 1.0a
-user-context for posting on your account.
+Posting uses OAuth 1.0a user-context auth. (Reading source timelines is no
+longer needed, so the bearer token is gone.) Reading news is RSS, which needs no
+credentials.
 
-| Environment variable     | What it is                                   |
-| ------------------------ | -------------------------------------------- |
-| `X_BEARER_TOKEN`         | App Bearer Token (App-only OAuth 2.0) — reads |
-| `X_API_KEY`              | API Key (a.k.a. Consumer Key)                |
-| `X_API_SECRET`           | API Key Secret (Consumer Secret)             |
-| `X_ACCESS_TOKEN`         | Access Token for the posting account         |
-| `X_ACCESS_TOKEN_SECRET`  | Access Token Secret for the posting account  |
+| Environment variable    | What it is                                  |
+| ----------------------- | ------------------------------------------- |
+| `X_API_KEY`             | API Key (a.k.a. Consumer Key)               |
+| `X_API_SECRET`          | API Key Secret (Consumer Secret)            |
+| `X_ACCESS_TOKEN`        | Access Token for the posting account        |
+| `X_ACCESS_TOKEN_SECRET` | Access Token Secret for the posting account |
 
 > Generate the Access Token / Secret **for the account you want to post from**,
-> and ensure your App has **Read and write** permissions before generating them.
+> with the App set to **Read and write** before generating them.
 
-### Anthropic API (summarisation + classification)
+### Anthropic API (classification + summarisation + ranking)
 
-| Environment variable | What it is                                                    |
-| -------------------- | ------------------------------------------------------------- |
-| `ANTHROPIC_API_KEY`  | Anthropic API key                                             |
-| `ANTHROPIC_MODEL`    | *(optional)* model id; defaults to `claude-opus-4-8`. For this high-frequency, lightweight task you may prefer `claude-haiku-4-5` to cut cost. |
+| Environment variable | What it is                                                   |
+| -------------------- | ------------------------------------------------------------ |
+| `ANTHROPIC_API_KEY`  | Anthropic API key                                            |
+| `ANTHROPIC_MODEL`    | *(optional)* model id; defaults to `claude-haiku-4-5`.       |
 
 ### Optional tuning variables
 
-| Variable                | Default | Meaning                                        |
-| ----------------------- | ------- | ---------------------------------------------- |
-| `MAX_TWEETS_PER_SOURCE` | `10`    | Recent tweets pulled per source each run.      |
-| `MAX_POSTS_PER_RUN`     | `8`     | Cap on posts in a single run (anti-flood).     |
-| `DRY_RUN`               | unset   | If `true`, logs what it would post but doesn't post. |
-| `STATE_FILE`            | `state.json` | Path of the committed de-duplication record. |
+| Variable                     | Default | Meaning                                          |
+| ---------------------------- | ------- | ------------------------------------------------ |
+| `MAX_ITEMS_PER_FEED`         | `25`    | Newest items considered per feed each run.       |
+| `MAX_POSTS_PER_DAY`          | `10`    | Hard cap on posts per UTC calendar day.          |
+| `STORY_SIMILARITY_THRESHOLD` | `0.34`  | Jaccard threshold for "same story" (cluster + dedup). |
+| `DRY_RUN`                    | unset   | If `true`, logs what it would post but doesn't post. |
+| `STATE_FILE`                 | `state.json` | Path of the committed de-duplication record. |
 
 ---
 
 ## De-duplication
 
-Each cloud run starts fresh with no local memory, so "what's already been
-posted" is persisted in two complementary ways:
+Each cloud run starts fresh with no local memory, so what's already been handled
+is persisted in `state.json`, which the routine commits back to the repo (see
+`.github/workflows/nfl-news-bot.yml`). It now tracks:
 
-1. **Committed state record (`state.json`).** Per source it stores `since_id`
-   (so the next run only fetches genuinely new tweets) and a capped list of
-   handled source-tweet IDs. The scheduled routine commits this file back to the
-   repo after each run — see `.github/workflows/nfl-news-bot.yml`.
-2. **Own-timeline check.** Before posting, the bot also reads its own recent
-   posts and skips anything identical, so it stays correct even if the state
-   file is ever lost.
+1. **Seen feed items** — UIDs of raw feed entries already processed, so the same
+   item is never reconsidered.
+2. **Posted stories (keyed by story, not tweet ID)** — token fingerprints of
+   stories already posted, compared with the same similarity used for
+   clustering, so the same story isn't reposted on a later run even when a
+   different feed carries it.
+3. **Daily counter** — posts made per UTC day, enforcing the 10/day cap.
 
-On the **first run for a source**, the bot seeds `since_id` to the latest tweet
-and posts nothing, so it never dumps a backlog.
+There's also an **own-timeline check**: before posting, the bot reads its own
+recent posts and skips anything identical, so it stays correct even if the state
+file is lost.
+
+On the **first run**, the bot records the current backlog and posts nothing, so
+it never dumps history.
+
+---
+
+## Feed list
+
+Edit in `nflbot/feeds.py`. National outlets are credited by name; team feeds use
+the "Wire" beat network (one per franchise).
+
+**National:** ESPN, NFL.com, ProFootballTalk, Yahoo Sports
+
+**Team beats (USA TODAY "Wire"):** Cardinals, Falcons, Ravens, Bills, Panthers,
+Bears, Bengals, Browns, Cowboys, Broncos, Lions, Packers, Texans, Colts,
+Jaguars, Chiefs, Raiders, Chargers, Rams, Dolphins, Vikings, Patriots, Saints,
+Giants, Jets, Eagles, Steelers, Niners, Seahawks, Buccaneers, Titans, Commanders
 
 ---
 
@@ -117,4 +140,3 @@ python -m nflbot.bot                # real run
 In the cloud: the included GitHub Actions workflow runs every 15 minutes,
 executes `python -m nflbot.bot`, and commits the updated `state.json`. Add the
 secrets listed above under **Settings → Secrets and variables → Actions**.
-Adjust the `cron` schedule to match your X API rate tier.
