@@ -46,7 +46,7 @@ OUTLET_HANDLES: dict[str, str] = {
     # Handles verified via web search (June 2026).
     "ESPN": "@espn",
     "ProFootballTalk": "@ProFootballTalk",
-    "Yahoo Sports": "@YahooSportsNFL",  # NFL-specific account matching this feed
+    "Yahoo Sports": "@YahooSports",  # per operator preference (generic Yahoo Sports account)
     "Pro Football Rumors": "@PFRumors",
     "CBS Sports NFL": "@NFLonCBS",
 }
