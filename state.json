@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 4,
+    "count": 5,
     "date": "2026-06-26"
   },
   "posted_stories": [
@@ -106,6 +106,19 @@
         "vikings"
       ],
       "ts": "2026-06-26T16:30:09.196148+00:00"
+    },
+    {
+      "tokens": [
+        "coach",
+        "control",
+        "darian",
+        "hire",
+        "quality",
+        "special",
+        "steelers",
+        "thompson"
+      ],
+      "ts": "2026-06-26T21:44:41.063497+00:00"
     }
   ],
   "seeded": true,
@@ -297,6 +310,43 @@
     "https://www.profootballrumors.com/?p=411109",
     "4fc84415-7ba0-4dbf-850c-c2aa7708fa4d",
     "5a17c9b3-be28-4147-a7b2-05d051f36cc5",
-    "37f275ca-f1ea-4fb5-82f5-6329836705d6"
+    "37f275ca-f1ea-4fb5-82f5-6329836705d6",
+    "US-EN-49188893",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/chris-shula-were-going-to-put-myles-garrett-in-his-comfort-zone",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jc-tretter-reiterates-that-the-nflpa-is-in-no-hurry-to-do-a-new-cba",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/the-cfl-wont-allow-any-of-its-teams-to-sign-brendan-sorsby",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/steelers-hire-darian-thompson-as-special-teams-quality-control-coach",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ravens-cb-nate-wiggins-healthy-after-offseason-surgery-expects-to-be-the-full-nate-this-season",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/before-brandon-aiyuk-can-force-his-release-he-must-apply-for-reinstatement",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/josh-allen-a-lot-of-new-this-year-well-really-make-our-team-during-training-camp",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/new-york-times-calls-dianna-russini-enlisting-a-coach-to-get-out-of-a-ticket-unacceptable-conduct",
+    "97c279ff-27ea-3df4-8906-e84a2584197b",
+    "562c89e3-fc44-3683-b849-c6b5bbe81f95",
+    "ac7eb2c1-5a1a-3602-83f7-727396e82593",
+    "f2f5f60e-892b-3b63-9011-2c90d22e18ee",
+    "fbdef9b7-5c49-31c0-aa3a-5f15a97d370c",
+    "07907e7d-899b-3fb7-818d-d49cf33e38ae",
+    "2c3f7671-047e-3c47-9700-7f74c65c5e09",
+    "cef98d32-fd58-388e-af6b-67fff82c4345",
+    "b70b8298-826a-3d41-85b7-722e3568ce3f",
+    "d122d22a-48f4-3de9-bdb5-f5618eb7066d",
+    "c3ad2a4a-8a90-334b-84d4-bd3d68ec5d54",
+    "77d6efd7-08df-361b-ac7b-5c59c4fd01de",
+    "b8baffd3-3bbc-3764-8acb-3c45862acb4e",
+    "ad7efcfa-85bf-35cd-a459-af64e287036e",
+    "1b00ce5c-7633-3deb-82c8-87e4b8e2609a",
+    "300b4814-cd2a-3217-9887-0069660b751f",
+    "bff7c9fa-12f2-3a8e-87a7-84af240bb0c9",
+    "822a572a-64c7-3b9c-b92d-b3266453ccc9",
+    "2e7f0dc1-9755-32df-bc01-28a9d9a47efb",
+    "28508a89-1ecc-3de7-97fa-e8ca64aff170",
+    "188d6e63-d517-39b4-b2d5-7608577d63b4",
+    "09d42b24-9b81-3d7a-abf7-4971f088e466",
+    "b0e18aa4-066e-38b9-b781-c1c06a3df0eb",
+    "03bbf56e-4fb1-3906-9a46-83115e5da1e9",
+    "https://www.profootballrumors.com/?p=411119",
+    "https://www.profootballrumors.com/?p=410470",
+    "https://www.profootballrumors.com/?p=411114",
+    "faa3d521-c476-4478-a297-d915ef3d0f3f"
   ]
 }
