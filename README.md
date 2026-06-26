@@ -23,29 +23,44 @@ edit them — individual feeds being unreachable or junk never sinks a run.
    as ONE story — a story is never posted twice just because two feeds carried
    it. Clustering is lexical (title-token similarity), so it's tunable, not
    perfect; refine `STORY_SIMILARITY_THRESHOLD` after watching it run.
-3. Classifies each distinct new story (real NFL news vs. opinion/list/ad/filler)
-   with `claude-haiku-4-5` and writes a short summary **in original wording**
-   (it does not copy the outlet's phrasing).
-4. Posts text only — no links, no images — in this exact format (including the
-   blank line):
+3. For each distinct new story, `claude-haiku-4-5` (in one call) classifies it
+   (real NFL news vs. opinion/list/ad/filler), assigns a **category** and a
+   **significance score (1–10)**, and writes a short summary **in original
+   wording** (it does not copy the outlet's phrasing).
+4. Composes the post text only — no links, no images — in this format (including
+   the blank line):
 
    ```
-   🚨 NEW: [original-wording summary]
+   🚨 SIGNING: [original-wording summary, #Team-tagged]
 
-   via Outlet
+   via @handle
    ```
 
-   where `Outlet` credits the source outlet (e.g. `via ESPN`, `via Colts Wire`).
-5. **Caps output at 10 posts per day.** If more distinct stories clear the bar
-   than fit in the remaining daily budget, Haiku ranks them by significance and
-   only the top ones are posted; the rest are dropped (not carried over).
+   - **Topic prefix** by category: `🚨 TRADE:`, `🚨 SIGNING:`, `🚨 INJURY:`,
+     `🚨 SUSPENSION:`, `🚨 ROSTER NEWS:`, `🚨 COACHING:`, or `🚨 NEWS:` (fallback).
+   - **Team names → hashtagged nicknames** (e.g. "Pittsburgh Steelers" → `#Steelers`).
+     Ambiguous bare cities ("New York", "Los Angeles") and lowercase words are
+     left as plain text rather than guessed.
+   - **Credit tags the outlet's X handle** (e.g. `via @espn`, `via @PFRumors`);
+     an outlet with no known handle falls back to plain `via Outlet`.
+   - **Hard length limit (≤270, X-weighted):** the summary is written to fit, and
+     if a composed post still exceeds the limit Haiku rewrites it shorter. A post
+     that can't be made to fit is skipped — **never truncated/cut off**.
+5. **Queues approved posts and releases them gradually.** Newsworthy stories are
+   written to a persistent queue (in `state.json`); each run releases only 1–2
+   posts, **most-significant first**, so posts stagger across the ~30-min runs
+   instead of dumping at once. A story already queued (or already posted) is
+   never re-queued. Stale queued items (>24h) are dropped.
+6. **Caps output at 10 posts per day.** Releases count toward the cap; because
+   the queue is drained best-first, the most important news goes out and
+   low-value items age out of the queue under the cap.
 
 ### Security
 
 Feed content (title + description) is treated strictly as **data to summarise
-and credit, never as instructions**. The classification, summarisation, and
-ranking prompts isolate feed text and explicitly refuse to follow, execute, or
-repeat any instruction contained inside it.
+and credit, never as instructions**. The classification/scoring/summarising and
+shortening prompts isolate feed text and explicitly refuse to follow, execute,
+or repeat any instruction contained inside it.
 
 ---
 
@@ -84,7 +99,11 @@ credentials.
 | ---------------------------- | ------- | ------------------------------------------------ |
 | `MAX_ITEMS_PER_FEED`         | `25`    | Newest items considered per feed each run.       |
 | `MAX_POSTS_PER_DAY`          | `10`    | Hard cap on posts per UTC calendar day.          |
-| `STORY_SIMILARITY_THRESHOLD` | `0.34`  | Jaccard threshold for "same story" (cluster + dedup). |
+| `RELEASE_PER_RUN`            | `2`     | Posts released from the queue per run (staggering). |
+| `QUEUE_TTL_HOURS`            | `24`    | Drop queued posts older than this (stale news).  |
+| `MAX_TOTAL_CHARS`            | `270`   | Hard ceiling on total post length (X-weighted).  |
+| `SUMMARY_TARGET_CHARS`       | `200`   | Summary length hint passed to Haiku.             |
+| `STORY_SIMILARITY_THRESHOLD` | `0.4`   | Overlap-coefficient threshold for "same story".  |
 | `DRY_RUN`                    | unset   | If `true`, logs what it would post but doesn't post. |
 | `STATE_FILE`                 | `state.json` | Path of the committed de-duplication record. |
 
