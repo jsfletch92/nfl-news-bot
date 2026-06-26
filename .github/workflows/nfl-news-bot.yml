@@ -4,8 +4,12 @@ name: NFL news bot
 # (state.json) back to the repo so each fresh run remembers what it posted.
 on:
   schedule:
-    # Every 15 minutes. Adjust to taste / your X API rate tier.
-    - cron: "*/15 * * * *"
+    # Every 30 minutes, offset 7 minutes off the hour. GitHub throttles frequent
+    # scheduled workflows and drops runs aligned to the top of the hour (the most
+    # congested window), so an off-the-hour 30-min cadence is honoured far more
+    # reliably than */15. Note: scheduled runs are best-effort and can still be
+    # delayed under load.
+    - cron: "7,37 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:
