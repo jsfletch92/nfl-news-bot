@@ -39,6 +39,24 @@ FEEDS: list[tuple[str, str, bool]] = [
     ("CBS Sports NFL", "https://www.cbssports.com/rss/headlines/nfl/", True),
 ]
 
+# Outlet credit label -> the outlet's X handle (improvement 4). Keys must match
+# the outlet labels in FEEDS. An outlet with no confident handle is omitted and
+# falls back to the plain-text "via Outlet" credit rather than guessing.
+OUTLET_HANDLES: dict[str, str] = {
+    # Handles verified via web search (June 2026).
+    "ESPN": "@espn",
+    "ProFootballTalk": "@ProFootballTalk",
+    "Yahoo Sports": "@YahooSportsNFL",  # NFL-specific account matching this feed
+    "Pro Football Rumors": "@PFRumors",
+    "CBS Sports NFL": "@NFLonCBS",
+}
+
+
+def credit_for(outlet: str) -> str:
+    """The credit token for an outlet: its @handle if known, else the label."""
+    return OUTLET_HANDLES.get(outlet, outlet)
+
+
 _USER_AGENT = "nfl-news-bot/1.0 (+https://github.com/jsfletch92/nfl-news-bot)"
 
 

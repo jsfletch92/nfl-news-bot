@@ -51,6 +51,15 @@ class Config:
     # Overlap-coefficient threshold for treating two headlines as the same story
     # (used both for clustering within a run and for cross-run de-duplication).
     story_similarity_threshold: float = 0.4
+    # Posts released from the queue per run (staggered delivery, improvement 2).
+    release_per_run: int = 2
+    # Queued posts older than this are dropped unposted (stale news), in hours.
+    queue_ttl_hours: int = 24
+    # Hard ceiling on total post length (improvement 5); kept under X's 280 with
+    # headroom, measured with X-style weighting (emoji counts as 2).
+    max_total_chars: int = 270
+    # Character budget hint passed to Haiku for the summary body.
+    summary_target_chars: int = 200
     # When True, log what would be posted without calling the X write API.
     dry_run: bool = False
 
@@ -73,5 +82,9 @@ class Config:
             story_similarity_threshold=float(
                 os.environ.get("STORY_SIMILARITY_THRESHOLD", "0.4")
             ),
+            release_per_run=int(os.environ.get("RELEASE_PER_RUN", "2")),
+            queue_ttl_hours=int(os.environ.get("QUEUE_TTL_HOURS", "24")),
+            max_total_chars=int(os.environ.get("MAX_TOTAL_CHARS", "270")),
+            summary_target_chars=int(os.environ.get("SUMMARY_TARGET_CHARS", "200")),
             dry_run=os.environ.get("DRY_RUN", "").lower() in {"1", "true", "yes"},
         )
