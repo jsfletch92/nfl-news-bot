@@ -23,7 +23,7 @@ from .config import STATE_FILE, Config, ConfigError
 from .feeds import fetch_all
 from .state import State
 from .summarizer import Summarizer
-from .x_client import XClient
+from .x_client import DuplicatePostError, TransientPostError, XClient
 
 log = logging.getLogger("nflbot")
 
@@ -67,18 +67,23 @@ def run(config: Config | None = None) -> int:
         log.info("Seeded %d items on first run (no posting).", len(items))
         return 0
 
-    # Every new item is marked seen this run regardless of outcome, so dropped /
-    # over-budget stories are never carried over to a later run.
+    # New items are marked seen at the end so dropped / over-budget stories are
+    # not carried over — EXCEPT items whose story failed to post transiently
+    # (collected in retry_uids), which are left un-seen so the next run retries.
+    retry_uids: set[str] = set()
     try:
-        return _process(config, x, summarizer, state, new_items)
+        return _process(config, x, summarizer, state, new_items, retry_uids)
     finally:
         for it in new_items:
-            state.mark_entry_seen(it.uid)
+            if it.uid not in retry_uids:
+                state.mark_entry_seen(it.uid)
+        if retry_uids:
+            log.info("Holding %d item(s) for retry next run (transient post failure).", len(retry_uids))
         wrote = state.save()
         log.info("State %s.", "updated" if wrote else "unchanged")
 
 
-def _process(config, x, summarizer, state, new_items) -> int:
+def _process(config, x, summarizer, state, new_items, retry_uids) -> int:
     remaining = state.remaining_today(config.max_posts_per_day)
     if remaining <= 0:
         log.info("Daily cap (%d) already reached; nothing to post.", config.max_posts_per_day)
@@ -140,7 +145,23 @@ def _process(config, x, summarizer, state, new_items) -> int:
 
         try:
             x.post(post_text)
+        except DuplicatePostError as exc:
+            # Permanent for this text — X already has it. Mark handled so we
+            # neither retry nor re-attempt it; don't count it as a new post.
+            log.info("X rejected as duplicate (%s); marking handled: %s", story.outlet, exc)
+            state.record_posted_story(story.tokens)
+            seen_tokens.append(story.tokens)
+            continue
+        except TransientPostError as exc:
+            # Transient (429/5xx) — leave this story's items un-seen so the next
+            # run retries them instead of dropping the news. Job stays green.
+            log.warning("Transient post failure (%s); will retry next run: %s", story.outlet, exc)
+            for it in story.items:
+                retry_uids.add(it.uid)
+            continue
         except Exception as exc:  # pragma: no cover - network path
+            # Non-transient, unexpected error (e.g. auth/400): log and drop so we
+            # don't loop on it forever.
             log.error("Failed to post story (%s): %s", story.outlet, exc)
             continue
 
