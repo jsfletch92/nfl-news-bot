@@ -51,12 +51,12 @@ def _clean_description(html: str, limit: int = 500) -> str:
 def compose_post(summarizer: Summarizer, analysis: Analysis, outlet: str, max_total: int) -> str | None:
     """Build the final post text, or None if it can't be made to fit.
 
-    Layout: "<prefix> <#tagged summary>\\n\\nvia <@handle|Outlet>". Enforces the
+    Layout: "<prefix> <#tagged summary>\\n\\n[<@handle|Outlet>]". Enforces the
     hard length limit; if the composed post is too long, asks Haiku for a shorter
     summary (a couple of attempts) and gives up rather than posting truncated.
     """
     prefix = CATEGORY_PREFIXES.get(analysis.category, CATEGORY_PREFIXES["NEWS"])
-    credit = f"via {credit_for(outlet)}"
+    credit = f"[{credit_for(outlet)}]"
 
     def build(summary: str) -> str:
         return f"{prefix} {hashtagify_teams(summary)}\n\n{credit}"

@@ -33,7 +33,7 @@ edit them — individual feeds being unreachable or junk never sinks a run.
    ```
    🚨 SIGNING: [original-wording summary, #Team-tagged]
 
-   via @handle
+   [@handle]
    ```
 
    - **Topic prefix** by category: `🚨 TRADE:`, `🚨 SIGNING:`, `🚨 INJURY:`,
@@ -41,8 +41,8 @@ edit them — individual feeds being unreachable or junk never sinks a run.
    - **Team names → hashtagged nicknames** (e.g. "Pittsburgh Steelers" → `#Steelers`).
      Ambiguous bare cities ("New York", "Los Angeles") and lowercase words are
      left as plain text rather than guessed.
-   - **Credit tags the outlet's X handle** (e.g. `via @espn`, `via @PFRumors`);
-     an outlet with no known handle falls back to plain `via Outlet`.
+   - **Credit tags the outlet's X handle in brackets** (e.g. `[@espn]`,
+     `[@PFRumors]`); an outlet with no known handle falls back to `[Outlet]`.
    - **Hard length limit (≤270, X-weighted):** the summary is written to fit, and
      if a composed post still exceeds the limit Haiku rewrites it shorter. A post
      that can't be made to fit is skipped — **never truncated/cut off**.
