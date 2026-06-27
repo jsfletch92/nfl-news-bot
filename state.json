@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 3,
+    "count": 5,
     "date": "2026-06-27"
   },
   "posted_stories": [
@@ -169,9 +169,61 @@
         "renew"
       ],
       "ts": "2026-06-27T16:48:28.688708+00:00"
+    },
+    {
+      "tokens": [
+        "christian",
+        "expected",
+        "extend",
+        "gonzalez",
+        "patriots"
+      ],
+      "ts": "2026-06-27T20:42:57.992299+00:00"
+    },
+    {
+      "tokens": [
+        "devon",
+        "extension",
+        "movement",
+        "seahawks",
+        "witherspoon"
+      ],
+      "ts": "2026-06-27T20:42:58.207025+00:00"
     }
   ],
-  "queue": [],
+  "queue": [
+    {
+      "category": "COACHING",
+      "id": "1214f6bfbbf74844828f4967021fd651",
+      "outlet": "Pro Football Rumors",
+      "score": 3,
+      "text": "\ud83d\udea8 COACHING: The #Steelers hired Darian Thompson as special teams quality control coach, replacing Derius Swinton II who was fired about a month prior.\n\n[@PFRumors]",
+      "tokens": [
+        "chiefs",
+        "lions",
+        "staff",
+        "steelers",
+        "updates"
+      ],
+      "ts": "2026-06-27T20:42:51.277556+00:00"
+    },
+    {
+      "category": "NEWS",
+      "id": "3252968197534aeea983b187d93022d4",
+      "outlet": "Pro Football Rumors",
+      "score": 5,
+      "text": "\ud83d\udea8 NEWS: The #Giants are not engaged in extension talks with edge rusher Kayvon Thibodeaux, the No. 5 overall pick in 2022, amid concerns about his production relative to draft expectations.\n\n[@PFRumors]",
+      "tokens": [
+        "between",
+        "extension",
+        "giants",
+        "kayvon",
+        "talks",
+        "thibodeaux"
+      ],
+      "ts": "2026-06-27T20:42:57.458237+00:00"
+    }
+  ],
   "seeded": true,
   "seen_entries": [
     "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ryan-flournoy-soars-after-2025-season-i-know-i-belong",
@@ -465,6 +517,34 @@
     "d0a042b8-777f-383b-80ef-683a682ee69f",
     "b8fa66bd-e864-3c77-ad93-4d3e26d6a2ba",
     "7f15eb16-50e3-3a58-a166-3f02b1789baa",
-    "https://www.profootballrumors.com/?p=411168"
+    "https://www.profootballrumors.com/?p=411168",
+    "US-EN-49157628",
+    "US-EN-49199010",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/brandon-aiyuk-continues-to-post-videos-regarding-the-49ers-and-commanders",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/o-j-simpson-wont-be-in-the-wall-of-fame-at-the-new-bills-stadium",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/mark-andrews-lamar-jackson-is-evolving-and-getting-better-in-totally-different-offense",
+    "962daa2a-079d-3d72-971b-4a611903bd34",
+    "408dd590-2733-3413-8727-fb835d8e02fb",
+    "885c0593-5c5d-36f2-84c5-5a2259f5cfde",
+    "280049c7-ed0e-429c-bc02-051b5dde56ae",
+    "6342028f-57ea-3c8c-af83-6d13d101496c",
+    "e25ce0c4-ecc8-3441-b2c2-986e625e67be",
+    "72528b61-eaeb-3589-b062-819efb1fa18b",
+    "77ff5064-38bf-3876-83ce-a2afdcfd87f9",
+    "b6d396e9-1232-3bf4-9a3b-4bbeda9d773f",
+    "41143d9b-85fd-3632-bac2-bd98a43a8952",
+    "c3afaa17-fe14-3d18-af5f-2f34fc48fe45",
+    "7c718aa5-5712-3d77-a2d2-8f2629b80944",
+    "c0e75f78-2c83-3d69-88bd-76b7668ba6ab",
+    "5f5763c7-15a5-3e01-af61-69dd31db8c3a",
+    "5dd09d43-b587-371b-be1c-2c58826a405d",
+    "c4b07a0c-4500-32f5-abc4-f0e20b865dd6",
+    "da8dbcbb-2c94-391b-8ba5-69a218c22269",
+    "956f19d1-9dc0-3a23-b7af-15f5e3c24ae4",
+    "b5f4432e-ab38-3aaf-af1a-7c9c077d12eb",
+    "https://www.profootballrumors.com/?p=411180",
+    "https://www.profootballrumors.com/?p=411176",
+    "https://www.profootballrumors.com/?p=411173",
+    "https://www.profootballrumors.com/?p=411170"
   ]
 }
