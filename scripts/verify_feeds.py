@@ -22,30 +22,24 @@ import socket
 import time
 from datetime import datetime, timezone
 
-# (outlet label, url). National candidates first, then sample team-beat families.
+# (outlet label, url). Run on the Actions runner ("Verify feeds" workflow) to
+# confirm liveness; promote only the ones that return content into nflbot/feeds.py.
 CANDIDATES: list[tuple[str, str]] = [
-    # --- National (ESPN/PFT/Yahoo already confirmed working in production) ---
+    # --- Confirmed-working national feeds (final FEEDS set) ---
     ("ESPN", "https://www.espn.com/espn/rss/nfl/news"),
     ("ProFootballTalk", "https://profootballtalk.nbcsports.com/feed/"),
     ("Yahoo Sports", "https://sports.yahoo.com/nfl/rss/"),
-    # National replacements for the dead NFL.com feed:
     ("Pro Football Rumors", "https://www.profootballrumors.com/feed"),
     ("CBS Sports NFL", "https://www.cbssports.com/rss/headlines/nfl/"),
-    ("NFL.com (old path)", "https://www.nfl.com/feeds/rss/news"),  # expected dead; sanity check
-    ("Sporting News NFL", "https://www.sportingnews.com/us/nfl/rss"),
-    # --- Team-beat family A: USA TODAY "Wire" /feed/ (reported dead) ---
-    ("Colts Wire (USAT)", "https://coltswire.usatoday.com/feed/"),
-    ("Eagles Wire (USAT)", "https://theeagleswire.usatoday.com/feed/"),
-    ("Chiefs Wire (USAT)", "https://chiefswire.usatoday.com/feed/"),
-    # --- Team-beat family B: USA TODAY "Wire" ?feed=rss2 (alt WP path) ---
-    ("Colts Wire (rss2)", "https://coltswire.usatoday.com/?feed=rss2"),
-    # --- Team-beat family C: Reddit team subreddit ---
-    ("r/Colts", "https://www.reddit.com/r/Colts/.rss"),
-    ("r/eagles", "https://www.reddit.com/r/eagles/.rss"),
-    ("r/KansasCityChiefs", "https://www.reddit.com/r/KansasCityChiefs/.rss"),
-    # --- Team-beat family D: Sports Illustrated / On SI team sites ---
-    ("SI Colts", "https://www.si.com/nfl/colts/.rss/full/"),
-    ("SI Eagles", "https://www.si.com/nfl/eagles/.rss/full/"),
+    ("The Athletic", "https://theathletic.com/rss/nfl/"),
+    # --- Retries: keep ONLY if these return recent NFL content ---
+    # SB Nation: per-league /nfl/rss/index.xml 404'd; trying the site-wide feed
+    # (note: site-wide covers ALL sports, so inspect the sample titles below for
+    # whether it's NFL-heavy or mixed — it may need an NFL filter).
+    ("SB Nation (site-wide)", "https://www.sbnation.com/rss/index.xml"),
+    # USA TODAY: this URL 301-redirects; feedparser follows redirects, so a live
+    # target feed will still show entries here.
+    ("USA TODAY NFL", "https://rssfeeds.usatoday.com/usatodaycomnfl-topstories"),
 ]
 
 
@@ -78,6 +72,7 @@ def main() -> int:
             parsed = feedparser.parse(url, agent=ua)
             n = len(parsed.entries)
             status_code = getattr(parsed, "status", "?")
+            titles = [(e.get("title") or "").strip() for e in parsed.entries[:3]]
             if n > 0:
                 status = "OK"
                 detail = _newest(parsed.entries)
@@ -85,15 +80,18 @@ def main() -> int:
                 status = "EMPTY"
                 bozo = getattr(parsed, "bozo_exception", "")
                 detail = f"http={status_code} {str(bozo)[:60]}"
-            rows.append((status, n, detail, outlet, url))
+            rows.append((status, n, detail, outlet, url, titles))
         except Exception as exc:  # noqa: BLE001 - report everything
-            rows.append(("ERROR", 0, str(exc)[:60], outlet, url))
+            rows.append(("ERROR", 0, str(exc)[:60], outlet, url, []))
 
     print(f"{'STATUS':7} {'N':>4}  {'NEWEST / DETAIL':32}  OUTLET")
     print("-" * 90)
-    for status, n, detail, outlet, url in rows:
+    for status, n, detail, outlet, url, titles in rows:
         print(f"{status:7} {n:>4}  {detail:32}  {outlet}")
         print(f"{'':47}  {url}")
+        # Sample titles help judge relevance (e.g. NFL vs. mixed-sport feeds).
+        for t in titles:
+            print(f"{'':47}  · {t[:90]}")
     ok = sum(1 for r in rows if r[0] == "OK")
     print("-" * 90)
     print(f"{ok}/{len(rows)} candidate feeds returned content.")
