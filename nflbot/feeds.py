@@ -2,11 +2,11 @@
 
 The source of news is public RSS feeds (free to read), not the X API.
 
-Nationals-only launch. ``FEEDS`` lists the national feeds confirmed working on
-the latest "Verify feeds" run; the bot runs against these. The USA TODAY "Wire"
-per-team feeds, NFL.com, and the Reddit/SI team-beat candidates all returned no
-usable entries from the runner, so none are included — dead URLs are dropped
-rather than left in.
+National feeds only. ``FEEDS`` lists the feeds confirmed to return content on the
+runner ("Verify feeds"); the bot runs against these. Dead candidates are dropped
+rather than left in — Bleacher Report, NFL.com, Sporting News, Sports Illustrated
+(main), and the USA TODAY "Wire"/SI/Reddit team-beat patterns all returned no
+usable entries.
 
 To add per-team beat coverage later, run the "Verify feeds" GitHub Actions
 workflow (it fetches candidate feeds from the runner, which has real network,
@@ -26,17 +26,15 @@ from dataclasses import dataclass
 log = logging.getLogger(__name__)
 
 # (outlet label, feed url, is_national)
-# Nationals-only launch. Add verified team feeds later via scripts/verify_feeds.py.
+# National feeds confirmed working on the runner ("Verify feeds"). Add more via
+# scripts/verify_feeds.py after confirming they return content.
 FEEDS: list[tuple[str, str, bool]] = [
-    # NOTE: ESPN returned empty (HTTP 202) on the latest verify run, though it
-    # has worked before. Kept in deliberately so we can watch it; if it stays
-    # empty it can be dropped. The bot already skips empty/dead feeds gracefully.
     ("ESPN", "https://www.espn.com/espn/rss/nfl/news", True),
-    # Confirmed working on the latest verify run:
     ("ProFootballTalk", "https://profootballtalk.nbcsports.com/feed/", True),
     ("Yahoo Sports", "https://sports.yahoo.com/nfl/rss/", True),
     ("Pro Football Rumors", "https://www.profootballrumors.com/feed", True),
     ("CBS Sports NFL", "https://www.cbssports.com/rss/headlines/nfl/", True),
+    ("The Athletic", "https://theathletic.com/rss/nfl/", True),
 ]
 
 # Outlet credit label -> the outlet's X handle (improvement 4). Keys must match
@@ -49,6 +47,7 @@ OUTLET_HANDLES: dict[str, str] = {
     "Yahoo Sports": "@YahooSports",  # per operator preference (generic Yahoo Sports account)
     "Pro Football Rumors": "@PFRumors",
     "CBS Sports NFL": "@NFLonCBS",
+    "The Athletic": "@TheAthleticNFL",
 }
 
 
