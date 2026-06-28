@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 2,
+    "count": 4,
     "date": "2026-06-28"
   },
   "posted_stories": [
@@ -210,6 +210,33 @@
         "updates"
       ],
       "ts": "2026-06-28T08:34:57.905852+00:00"
+    },
+    {
+      "tokens": [
+        "2025",
+        "acl",
+        "bunting",
+        "cardinals",
+        "corps",
+        "latest",
+        "murphy",
+        "sean",
+        "suffered",
+        "tear"
+      ],
+      "ts": "2026-06-28T16:50:29.844270+00:00"
+    },
+    {
+      "tokens": [
+        "bills",
+        "honored",
+        "news",
+        "reacting",
+        "simpson",
+        "stadium",
+        "won"
+      ],
+      "ts": "2026-06-28T16:50:30.037297+00:00"
     }
   ],
   "queue": [],
@@ -562,6 +589,30 @@
     "c7b07f63-99f6-32a7-9221-da2221971622",
     "ee5b4c91-885c-3d05-91db-de648901f491",
     "d5144ecb-bb0c-36ce-878d-34d1b4dfd1d1",
-    "https://www.profootballrumors.com/?p=411120"
+    "https://www.profootballrumors.com/?p=411120",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/brandon-aiyuk-terminated-sra-on-saturday",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/the-path-is-set-for-the-u-s-mens-team-in-the-world-cup-knockout-round",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/the-possibility-of-a-patriots-game-in-scotland-is-in-the-conversation-phase",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/terrion-arnold-hires-harvey-steinberg-for-criminal-case-in-florida",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/archie-manning-disappointed-that-arch-was-crowned-before-he-ever-played",
+    "71fe3791-5dfc-3fff-bb3e-eb1b2dbd9bbc",
+    "d78cf802-3694-374d-b5df-6164fc8d9923",
+    "c4925112-a21e-323d-afc2-e7d1478e5ef6",
+    "8ed18d3e-1ad2-36a6-bd42-6ead5575ca3b",
+    "0d0e2005-4212-3ee2-a90a-5e89b4c7930f",
+    "c6d011f4-87cc-3572-ab06-aa2271647433",
+    "1c4503ab-6475-3e52-a5ca-09b2950e79df",
+    "72814ef4-2ace-37d6-b89c-53fe5af66a73",
+    "1395d1df-695a-3779-b6c2-40863398593b",
+    "7b6ae27b-99c2-352e-8c63-a44945c3e24f",
+    "af2ca41f-d2ab-39ad-8047-ee20ec556ee2",
+    "0d0247aa-5bfa-3546-9e46-bcd52f2a0e44",
+    "b22a2bc5-b95b-36d3-a5c2-c16512adeff8",
+    "de5493c0-947a-342d-a92e-6a07924a470d",
+    "a99e800b-7f48-3715-9914-863d92afeea6",
+    "8bdd9520-f5c6-3efc-be76-70bc92c81428",
+    "14a26c45-4234-3401-b900-751c0a474d2c",
+    "0b95e322-2d26-38fb-ad58-39835ffe6f0d",
+    "https://www.profootballrumors.com/?p=411096"
   ]
 }
