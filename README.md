@@ -50,7 +50,7 @@ edit them — individual feeds being unreachable or junk never sinks a run.
    written to a persistent queue (in `state.json`); each run releases only 1–2
    posts, **most-significant first**, so posts stagger across the ~30-min runs
    instead of dumping at once. A story already queued (or already posted) is
-   never re-queued. Stale queued items (>24h) are dropped.
+   never re-queued. Stale queued items (>3h) are dropped (freshness guard).
 6. **Caps output at 10 posts per day.** Releases count toward the cap; because
    the queue is drained best-first, the most important news goes out and
    low-value items age out of the queue under the cap.
@@ -100,7 +100,7 @@ credentials.
 | `MAX_ITEMS_PER_FEED`         | `25`    | Newest items considered per feed each run.       |
 | `MAX_POSTS_PER_DAY`          | `10`    | Hard cap on posts per UTC calendar day.          |
 | `RELEASE_PER_RUN`            | `2`     | Posts released from the queue per run (staggering). |
-| `QUEUE_TTL_HOURS`            | `24`    | Drop queued posts older than this (stale news).  |
+| `QUEUE_TTL_HOURS`            | `3`     | Drop queued posts older than this (freshness guard). |
 | `MAX_TOTAL_CHARS`            | `270`   | Hard ceiling on total post length (X-weighted).  |
 | `SUMMARY_TARGET_CHARS`       | `200`   | Summary length hint passed to Haiku.             |
 | `STORY_SIMILARITY_THRESHOLD` | `0.4`   | Overlap-coefficient threshold for "same story".  |
