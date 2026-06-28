@@ -22,30 +22,33 @@ import socket
 import time
 from datetime import datetime, timezone
 
-# (outlet label, url). National candidates first, then sample team-beat families.
+# (outlet label, url). Run on the Actions runner ("Verify feeds" workflow) to
+# confirm liveness; promote only the ones that return content into nflbot/feeds.py.
 CANDIDATES: list[tuple[str, str]] = [
-    # --- National (ESPN/PFT/Yahoo already confirmed working in production) ---
+    # --- Currently live in production (baseline / sanity check) ---
     ("ESPN", "https://www.espn.com/espn/rss/nfl/news"),
     ("ProFootballTalk", "https://profootballtalk.nbcsports.com/feed/"),
     ("Yahoo Sports", "https://sports.yahoo.com/nfl/rss/"),
-    # National replacements for the dead NFL.com feed:
     ("Pro Football Rumors", "https://www.profootballrumors.com/feed"),
     ("CBS Sports NFL", "https://www.cbssports.com/rss/headlines/nfl/"),
-    ("NFL.com (old path)", "https://www.nfl.com/feeds/rss/news"),  # expected dead; sanity check
+    # --- New national candidates to verify (multiple URL guesses where unsure) ---
+    # The Athletic (now under NYTimes): best-known feed path.
+    ("The Athletic NFL", "https://www.nytimes.com/athletic/rss/nfl/"),
+    ("The Athletic NFL (alt)", "https://theathletic.com/rss/nfl/"),
+    # Bleacher Report: no documented official feed — long-shot guesses.
+    ("Bleacher Report NFL", "https://bleacherreport.com/articles/feed"),
+    ("Bleacher Report NFL (alt)", "https://syndication.bleacherreport.com/nfl.rss"),
+    # NFL.com: old path was dead; re-checking it plus a couple alternates.
+    ("NFL.com (old path)", "https://www.nfl.com/feeds/rss/news"),
+    ("NFL.com (rss landing)", "https://www.nfl.com/rss/rsslanding"),
+    # SB Nation main league NFL hub (Vox section-feed pattern).
+    ("SB Nation NFL", "https://www.sbnation.com/nfl/rss/index.xml"),
+    # Sporting News NFL section.
     ("Sporting News NFL", "https://www.sportingnews.com/us/nfl/rss"),
-    # --- Team-beat family A: USA TODAY "Wire" /feed/ (reported dead) ---
-    ("Colts Wire (USAT)", "https://coltswire.usatoday.com/feed/"),
-    ("Eagles Wire (USAT)", "https://theeagleswire.usatoday.com/feed/"),
-    ("Chiefs Wire (USAT)", "https://chiefswire.usatoday.com/feed/"),
-    # --- Team-beat family B: USA TODAY "Wire" ?feed=rss2 (alt WP path) ---
-    ("Colts Wire (rss2)", "https://coltswire.usatoday.com/?feed=rss2"),
-    # --- Team-beat family C: Reddit team subreddit ---
-    ("r/Colts", "https://www.reddit.com/r/Colts/.rss"),
-    ("r/eagles", "https://www.reddit.com/r/eagles/.rss"),
-    ("r/KansasCityChiefs", "https://www.reddit.com/r/KansasCityChiefs/.rss"),
-    # --- Team-beat family D: Sports Illustrated / On SI team sites ---
-    ("SI Colts", "https://www.si.com/nfl/colts/.rss/full/"),
-    ("SI Eagles", "https://www.si.com/nfl/eagles/.rss/full/"),
+    # USA TODAY main NFL section (rssfeeds.usatoday.com pattern), not the Wire sites.
+    ("USA TODAY NFL", "https://rssfeeds.usatoday.com/usatodaycomnfl-topstories"),
+    # Sports Illustrated main NFL feed (SI/Minute Media section pattern), not team SI sites.
+    ("Sports Illustrated NFL", "https://www.si.com/nfl/.rss/full/"),
 ]
 
 
