@@ -1,7 +1,7 @@
 {
   "daily": {
-    "count": 5,
-    "date": "2026-06-27"
+    "count": 2,
+    "date": "2026-06-28"
   },
   "posted_stories": [
     {
@@ -189,30 +189,8 @@
         "witherspoon"
       ],
       "ts": "2026-06-27T20:42:58.207025+00:00"
-    }
-  ],
-  "queue": [
-    {
-      "category": "COACHING",
-      "id": "1214f6bfbbf74844828f4967021fd651",
-      "outlet": "Pro Football Rumors",
-      "score": 3,
-      "text": "\ud83d\udea8 COACHING: The #Steelers hired Darian Thompson as special teams quality control coach, replacing Derius Swinton II who was fired about a month prior.\n\n[@PFRumors]",
-      "tokens": [
-        "chiefs",
-        "lions",
-        "staff",
-        "steelers",
-        "updates"
-      ],
-      "ts": "2026-06-27T20:42:51.277556+00:00"
     },
     {
-      "category": "NEWS",
-      "id": "3252968197534aeea983b187d93022d4",
-      "outlet": "Pro Football Rumors",
-      "score": 5,
-      "text": "\ud83d\udea8 NEWS: The #Giants are not engaged in extension talks with edge rusher Kayvon Thibodeaux, the No. 5 overall pick in 2022, amid concerns about his production relative to draft expectations.\n\n[@PFRumors]",
       "tokens": [
         "between",
         "extension",
@@ -221,9 +199,20 @@
         "talks",
         "thibodeaux"
       ],
-      "ts": "2026-06-27T20:42:57.458237+00:00"
+      "ts": "2026-06-28T08:34:57.709069+00:00"
+    },
+    {
+      "tokens": [
+        "chiefs",
+        "lions",
+        "staff",
+        "steelers",
+        "updates"
+      ],
+      "ts": "2026-06-28T08:34:57.905852+00:00"
     }
   ],
+  "queue": [],
   "seeded": true,
   "seen_entries": [
     "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ryan-flournoy-soars-after-2025-season-i-know-i-belong",
@@ -545,6 +534,23 @@
     "https://www.profootballrumors.com/?p=411180",
     "https://www.profootballrumors.com/?p=411176",
     "https://www.profootballrumors.com/?p=411173",
-    "https://www.profootballrumors.com/?p=411170"
+    "https://www.profootballrumors.com/?p=411170",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/baker-mayfield-on-contract-talks-its-a-matter-of-finding-that-middle-ground",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/former-titans-scout-mical-johnson-testifies-in-the-blaise-taylor-murder-case",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/dexter-lawrence-i-know-my-impact-on-the-game-even-without-sack-numbers",
+    "def1b822-cd31-307e-b136-55f66068cb71",
+    "b5c7144f-dd80-4d7e-9d65-89f85f0842c8",
+    "02c62142-aa02-3630-993b-0803338fb680",
+    "1ffb1ded-f443-30a2-a00c-03d83a3c5f78",
+    "6574f3f0-820c-33ea-b625-27b009b9ae74",
+    "94c2b074-b47b-3c2c-a6e6-7f8312d01fd0",
+    "037db6b4-9367-358e-989c-3290c88231fd",
+    "522dc9dc-3ad9-3b9e-8ffc-050c9331e1b1",
+    "https://www.profootballrumors.com/?p=411185",
+    "https://www.profootballrumors.com/?p=411209",
+    "https://www.profootballrumors.com/?p=411204",
+    "https://www.profootballrumors.com/?p=411199",
+    "https://www.profootballrumors.com/?p=410336",
+    "https://www.profootballrumors.com/?p=411194"
   ]
 }
