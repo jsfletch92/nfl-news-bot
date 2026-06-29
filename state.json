@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 3,
+    "count": 4,
     "date": "2026-06-29"
   },
   "posted_stories": [
@@ -291,6 +291,19 @@
         "terrion"
       ],
       "ts": "2026-06-29T19:26:15.756081+00:00"
+    },
+    {
+      "tokens": [
+        "about",
+        "cunningham",
+        "excited",
+        "ian",
+        "kyle",
+        "pitts",
+        "today",
+        "trajectory"
+      ],
+      "ts": "2026-06-29T22:46:19.346880+00:00"
     }
   ],
   "queue": [],
@@ -817,6 +830,31 @@
     "c7ee0942-0e85-497f-9660-29b6a706364e",
     "https://www.nytimes.com/athletic/7405578/2026/06/29/terrion-arnold-arrest-bond-kindapping-robbery/",
     "https://www.nytimes.com/athletic/7405666/2026/06/29/chris-johnson-als-titans-cardinals-jets/",
-    "https://www.nytimes.com/athletic/7395780/2026/06/27/brendan-sorsby-sf-giants-pride-night-baseball-caps/"
+    "https://www.nytimes.com/athletic/7395780/2026/06/27/brendan-sorsby-sf-giants-pride-night-baseball-caps/",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/donte-jackson-i-have-emerged-as-one-of-the-top-corners-in-the-league",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/report-first-round-of-bids-for-seahawks-were-due-today",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/lions-decision-to-release-terrion-arnold-has-significant-financial-ramifications",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/lions-release-terrion-arnold",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ian-cunningham-were-excited-about-who-kyle-pitts-is-today-and-the-trajectory-hes-on",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jaydon-blue-i-didnt-start-off-like-i-should-have-im-ready-to-go-now",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/kyle-juszczyk-mike-evans-has-been-unguardable-at-practice",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/browns-to-have-nine-open-training-camp-practices",
+    "966bb83f-a100-3f48-b266-951ba9a77fa8",
+    "683e8605-307c-3e7f-8f75-533ab8ffb74e",
+    "65031783-b656-3123-ab18-c2bc751ee182",
+    "e1d71522-f7a1-33a5-8d4f-56bb8ec33367",
+    "e87fa04f-19b7-34a5-bd6f-e574cfe0b3d4",
+    "6e977463-a2b1-3888-9ba4-cee48a1ff52e",
+    "cab0e0d3-c488-35df-a4ac-cf106b63c9a9",
+    "96a624dd-e9a1-322b-9428-8976a135f75b",
+    "a63d3f8c-017e-3ae5-a179-01644353ccd9",
+    "6971cc47-5e6b-36e4-8844-6e6710a4200a",
+    "bafca89d-d2bc-32a2-9981-569d139dd91e",
+    "f9b293a5-a758-3aae-b2b3-77442617278c",
+    "5dfd9541-0e59-3ec1-b750-479237e13805",
+    "https://www.profootballrumors.com/?p=411299",
+    "https://www.profootballrumors.com/?p=411300",
+    "d5544e39-9cbd-4bb5-b1b8-971352223138",
+    "https://www.nytimes.com/athletic/7405578/2026/06/29/terrion-arnold-arrest-bond-kindapping-robbery-waived-lions/"
   ]
 }
