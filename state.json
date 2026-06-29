@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 2,
+    "count": 3,
     "date": "2026-06-29"
   },
   "posted_stories": [
@@ -277,94 +277,23 @@
         "morning"
       ],
       "ts": "2026-06-29T12:51:45.278004+00:00"
-    }
-  ],
-  "queue": [
-    {
-      "category": "ROSTER",
-      "id": "1272855e9b964817a842766cc219e65c",
-      "outlet": "ProFootballTalk",
-      "score": 3,
-      "text": "\ud83d\udea8 ROSTER NEWS: Special teams contributor C.J. Goodwin has announced his retirement from the NFL.\n\n[@ProFootballTalk]",
-      "tokens": [
-        "announces",
-        "core",
-        "goodwin",
-        "retirement",
-        "special"
-      ],
-      "ts": "2026-06-29T12:50:42.420656+00:00"
     },
     {
-      "category": "NEWS",
-      "id": "fa19f98538e34b38a3cb86993e365226",
-      "outlet": "Yahoo Sports",
-      "score": 2,
-      "text": "\ud83d\udea8 NEWS: Jared Wiley showing improved mobility compared to the previous season, suggesting positive recovery progress.\n\n[@YahooSports]",
       "tokens": [
-        "better",
-        "chiefs",
-        "jared",
-        "last",
-        "lot",
-        "moving",
-        "news",
-        "than",
-        "wiley",
-        "year"
-      ],
-      "ts": "2026-06-29T12:51:01.779949+00:00"
-    },
-    {
-      "category": "ROSTER",
-      "id": "26dedfe72697486684236edf74bc2b32",
-      "outlet": "Pro Football Rumors",
-      "score": 3,
-      "text": "\ud83d\udea8 ROSTER NEWS: #Cowboys cornerback and special teams contributor C.J. Goodwin retired after 12 seasons in the NFL.\n\n[@PFRumors]",
-      "tokens": [
-        "cowboys",
-        "goodwin",
-        "retiring"
-      ],
-      "ts": "2026-06-29T12:51:12.896625+00:00"
-    },
-    {
-      "category": "NEWS",
-      "id": "5beeabcd3b8b471e930b41ebfb37eafd",
-      "outlet": "The Athletic",
-      "score": 4,
-      "text": "\ud83d\udea8 NEWS: The NFL denied Brendan Sorsby's application to enter the league through the supplemental draft.\n\n[@TheAthleticNFL]",
-      "tokens": [
-        "brendan",
-        "get",
-        "help",
-        "might",
-        "much",
-        "nflpa",
-        "sorsby",
-        "why"
-      ],
-      "ts": "2026-06-29T12:51:29.264959+00:00"
-    },
-    {
-      "category": "NEWS",
-      "id": "f4f09e1fcd874f1c86cc401bccdbedff",
-      "outlet": "The Athletic",
-      "score": 2,
-      "text": "\ud83d\udea8 NEWS: NFL releases official 2026 training camp and joint practice schedules, with 28 teams participating in joint practices including #Saints and #Titans each hosting three sessions.\n\n[@TheAthleticNFL]",
-      "tokens": [
-        "2026",
-        "announces",
-        "camp",
-        "dates",
-        "every",
-        "joint",
+        "able",
+        "arnold",
+        "bond",
+        "lions",
+        "million",
+        "play",
         "practice",
-        "training"
+        "released",
+        "terrion"
       ],
-      "ts": "2026-06-29T12:51:41.592974+00:00"
+      "ts": "2026-06-29T19:26:15.756081+00:00"
     }
   ],
+  "queue": [],
   "seeded": true,
   "seen_entries": [
     "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ryan-flournoy-soars-after-2025-season-i-know-i-belong",
@@ -831,6 +760,63 @@
     "https://www.nytimes.com/athletic/7383350/2026/06/22/nfl-training-camp-2026-schedule/",
     "https://www.nytimes.com/athletic/7379705/2026/06/22/nfl-offseason-workouts-teams-observations-takeaways/",
     "https://www.nytimes.com/athletic/7377988/2026/06/20/world-cup-scotland-party-boston-patriots-morocco/",
-    "https://www.nytimes.com/athletic/7368190/2026/06/19/nfl-fathers-day-sons-bloodline/"
+    "https://www.nytimes.com/athletic/7368190/2026/06/19/nfl-fathers-day-sons-bloodline/",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/six-days-later-theres-no-news-on-brendan-sorsby",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/browns-announce-ryan-grigsons-return-chris-coopers-promotion-in-front-office",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/mondays-round-of-32-world-cup-ticket-prices-have-fallen",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/titans-owner-amy-adams-strunk-expresses-full-support-for-chris-johnson",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/the-travis-kelce-taylor-swift-wedding-is-expected-to-be-attended-by-many-tight-ends",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-says-terrion-arnold-case-remains-under-review",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/terrion-arnold-is-released-on-1-million-bond-will-be-able-to-practice-with-lions",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/brian-schottenheimer-praises-ryan-flournoys-dirty-work-in-run-blocking-special-teams",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/kc-concepcion-thinks-browns-wide-receiver-group-can-be-dangerous",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nba-veteran-malik-beasley-has-been-indicted-on-federal-gambling-charges",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/blaise-taylor-trial-continues-on-monday",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/heres-what-you-missed-over-the-weekend",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jameson-williams-has-worked-to-go-from-good-to-truly-elite-this-offseason",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/giants-to-hold-six-open-training-camp-practices-in-west-virginia",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/former-titans-rb-chris-johnson-reveals-that-hes-fighting-als",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/chargers-to-hold-two-training-camp-practices-in-san-diego",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/patriots-to-hold-13-open-practices-at-training-camp",
+    "44710fe8-3780-3ab8-8df9-14ee33b328e8",
+    "01d4c4a4-1907-3fb6-998c-4b8de385f0c6",
+    "db70341d-f62d-38bb-b12a-e8011212ddf3",
+    "d4426393-b57e-398a-92cb-111474191d9b",
+    "6ccd8fa8-5ed9-3cad-99be-d1e48b434ea7",
+    "8fa87c57-9065-34b3-9274-b65bc73ad2f7",
+    "9bb75b9c-a64b-3383-af5d-11ff39ce1653",
+    "d28c47c6-dca4-375a-8781-5a285cacbd26",
+    "ebe34cfa-e4af-38bc-b483-dee61f5903b8",
+    "e51259d5-9732-308e-b96f-4dd7edce7ecd",
+    "c0e59554-d2d5-359e-b528-21eda82df7ae",
+    "77f752ac-d431-3dca-98e4-d3d1f2048c25",
+    "823e3a6a-e612-3142-a821-8021146a3c7c",
+    "e0bf4b5e-fed6-3cd9-bc9d-1f99b3073594",
+    "6c78722d-dc47-3830-b736-89c43e1b23ed",
+    "8bb6af39-fb29-3e20-97eb-b319df5a7167",
+    "a64cb677-8742-3157-9e10-e750ed679d53",
+    "c519eede-9b79-30e7-a738-d963e1b3bfa1",
+    "b7a90d48-8537-3432-88d1-180a080263c1",
+    "90733422-2be5-3356-ab7c-a498456c2de2",
+    "02b0e82c-61db-3020-a353-cc59a36cdf1c",
+    "f62b7b3e-e6d9-3899-a656-7059a4c747fe",
+    "b6b969b5-d936-3c47-9d15-d70412010bbd",
+    "aa250a85-c7ca-31d8-ac64-e6a669ea4c85",
+    "https://www.profootballrumors.com/?p=411292",
+    "https://www.profootballrumors.com/?p=411286",
+    "https://www.profootballrumors.com/?p=411284",
+    "https://www.profootballrumors.com/?p=411275",
+    "https://www.profootballrumors.com/?p=411280",
+    "https://www.profootballrumors.com/?p=411277",
+    "77fae0fb-42be-4c49-86f5-c485db86ae41",
+    "23c81d8a-fd07-4266-85d7-a1e1081fccc1",
+    "6c24a816-8872-4d90-b027-f5239d732ac2",
+    "cdf9d9df-f518-4532-90e3-5a1636a3caf0",
+    "7665df7d-5d37-4b02-9dcf-83a74df36a80",
+    "8e32db68-5f73-4023-bb8d-db59a2ba1ad6",
+    "c7ee0942-0e85-497f-9660-29b6a706364e",
+    "https://www.nytimes.com/athletic/7405578/2026/06/29/terrion-arnold-arrest-bond-kindapping-robbery/",
+    "https://www.nytimes.com/athletic/7405666/2026/06/29/chris-johnson-als-titans-cardinals-jets/",
+    "https://www.nytimes.com/athletic/7395780/2026/06/27/brendan-sorsby-sf-giants-pride-night-baseball-caps/"
   ]
 }
