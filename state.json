@@ -1,7 +1,7 @@
 {
   "daily": {
-    "count": 5,
-    "date": "2026-06-28"
+    "count": 2,
+    "date": "2026-06-29"
   },
   "posted_stories": [
     {
@@ -250,9 +250,121 @@
         "williams"
       ],
       "ts": "2026-06-28T20:45:48.066034+00:00"
+    },
+    {
+      "tokens": [
+        "arnold",
+        "arrested",
+        "connection",
+        "kidnapping",
+        "lions",
+        "plot",
+        "robbery",
+        "terrion"
+      ],
+      "ts": "2026-06-29T12:51:45.057144+00:00"
+    },
+    {
+      "tokens": [
+        "als",
+        "america",
+        "announces",
+        "appearance",
+        "chris",
+        "diagnosis",
+        "good",
+        "johnson",
+        "morning"
+      ],
+      "ts": "2026-06-29T12:51:45.278004+00:00"
     }
   ],
-  "queue": [],
+  "queue": [
+    {
+      "category": "ROSTER",
+      "id": "1272855e9b964817a842766cc219e65c",
+      "outlet": "ProFootballTalk",
+      "score": 3,
+      "text": "\ud83d\udea8 ROSTER NEWS: Special teams contributor C.J. Goodwin has announced his retirement from the NFL.\n\n[@ProFootballTalk]",
+      "tokens": [
+        "announces",
+        "core",
+        "goodwin",
+        "retirement",
+        "special"
+      ],
+      "ts": "2026-06-29T12:50:42.420656+00:00"
+    },
+    {
+      "category": "NEWS",
+      "id": "fa19f98538e34b38a3cb86993e365226",
+      "outlet": "Yahoo Sports",
+      "score": 2,
+      "text": "\ud83d\udea8 NEWS: Jared Wiley showing improved mobility compared to the previous season, suggesting positive recovery progress.\n\n[@YahooSports]",
+      "tokens": [
+        "better",
+        "chiefs",
+        "jared",
+        "last",
+        "lot",
+        "moving",
+        "news",
+        "than",
+        "wiley",
+        "year"
+      ],
+      "ts": "2026-06-29T12:51:01.779949+00:00"
+    },
+    {
+      "category": "ROSTER",
+      "id": "26dedfe72697486684236edf74bc2b32",
+      "outlet": "Pro Football Rumors",
+      "score": 3,
+      "text": "\ud83d\udea8 ROSTER NEWS: #Cowboys cornerback and special teams contributor C.J. Goodwin retired after 12 seasons in the NFL.\n\n[@PFRumors]",
+      "tokens": [
+        "cowboys",
+        "goodwin",
+        "retiring"
+      ],
+      "ts": "2026-06-29T12:51:12.896625+00:00"
+    },
+    {
+      "category": "NEWS",
+      "id": "5beeabcd3b8b471e930b41ebfb37eafd",
+      "outlet": "The Athletic",
+      "score": 4,
+      "text": "\ud83d\udea8 NEWS: The NFL denied Brendan Sorsby's application to enter the league through the supplemental draft.\n\n[@TheAthleticNFL]",
+      "tokens": [
+        "brendan",
+        "get",
+        "help",
+        "might",
+        "much",
+        "nflpa",
+        "sorsby",
+        "why"
+      ],
+      "ts": "2026-06-29T12:51:29.264959+00:00"
+    },
+    {
+      "category": "NEWS",
+      "id": "f4f09e1fcd874f1c86cc401bccdbedff",
+      "outlet": "The Athletic",
+      "score": 2,
+      "text": "\ud83d\udea8 NEWS: NFL releases official 2026 training camp and joint practice schedules, with 28 teams participating in joint practices including #Saints and #Titans each hosting three sessions.\n\n[@TheAthleticNFL]",
+      "tokens": [
+        "2026",
+        "announces",
+        "camp",
+        "dates",
+        "every",
+        "joint",
+        "practice",
+        "training"
+      ],
+      "ts": "2026-06-29T12:51:41.592974+00:00"
+    }
+  ],
   "seeded": true,
   "seen_entries": [
     "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ryan-flournoy-soars-after-2025-season-i-know-i-belong",
@@ -650,6 +762,75 @@
     "282943a0-85ac-3a8d-a865-96ea3235efe4",
     "https://www.profootballrumors.com/?p=411217",
     "https://www.profootballrumors.com/?p=411214",
-    "https://www.profootballrumors.com/?p=411212"
+    "https://www.profootballrumors.com/?p=411212",
+    "US-EN-49167327",
+    "US-EN-49200181",
+    "US-EN-49177626",
+    "US-EN-49166500",
+    "US-EN-49190165",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ravens-s-malaki-starks-plans-to-work-with-jon-gruden-ahead-of-training-camp",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/world-cup-rights-and-nfl-rights-could-be-on-the-market-at-the-same-time",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/remembering-joe-delaney-43-years-after-he-died",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jets-demario-davis-spends-nearly-1-million-a-year-staying-in-shape-to-play-at-age-37",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/judge-david-doty-who-presided-over-the-case-that-resulted-in-the-nfls-salary-cap-era-dies-at-96",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/tom-brady-expects-a-massive-improvement-from-the-raiders-in-2026",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/brandon-aiyuk-has-complaints-about-the-nflpa-too",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/core-special-teams-player-c-j-goodwin-announces-retirement",
+    "a761ae4b-ed78-3477-aaf0-2d76ed2a2b64",
+    "60412548-a427-396f-907d-0a2aaaa1099d",
+    "b35ce02a-1d69-3ddd-bdd1-5df44115b6d9",
+    "66f68326-1934-39b1-921a-4939fc62692c",
+    "dfa3adeb-10dd-3f35-9727-8d8ce67b908b",
+    "8e39bf02-8a4b-3e23-a9f4-c7ba995a1d4d",
+    "0a47f1d0-9af2-34f0-8d32-a66823cd909e",
+    "f3bf1bf3-d29c-3450-a00d-303cef7e7ad1",
+    "db617349-d82d-3261-9d18-7454444c1d42",
+    "9cfed156-5557-385e-ab4d-d34ed911bff2",
+    "6a4d54ce-44bc-37a7-b902-079418536a44",
+    "ec3feeee-55e1-3c5e-bc8e-8b34606a11dd",
+    "72049e32-47ce-3de3-b847-904a6c87922d",
+    "a3445bc1-6217-3ee6-b5e7-df66aaeaa0cb",
+    "8b9d1c64-9bbe-3a65-bd1f-a447ac63f79f",
+    "1e7a5dac-687c-320a-bbaa-25842b84d298",
+    "62a40615-ebec-3a66-bca7-86bfe659d87a",
+    "e4c4223d-8c0b-3097-b989-a18c2003d990",
+    "9cfb6fde-08ab-31dd-990c-0c55c42b6e0a",
+    "6faba3e7-f967-35f2-a30f-ed38776a8698",
+    "5e156e72-0808-3581-9419-38b82a0bd774",
+    "e8b55c1a-a1b1-31e6-b256-09a5f2831539",
+    "f0f9138b-b9d5-3d2f-b3da-c6222134fb74",
+    "ff3f6c3a-2bd7-314e-b56c-a388e3846692",
+    "d412bf9c-a9e1-3541-9369-4efeb28f39d3",
+    "https://www.profootballrumors.com/?p=411233",
+    "https://www.profootballrumors.com/?p=411231",
+    "https://www.profootballrumors.com/?p=411266",
+    "https://www.profootballrumors.com/?p=411259",
+    "https://www.profootballrumors.com/?p=411229",
+    "https://www.profootballrumors.com/?p=411226",
+    "https://www.nytimes.com/athletic/7394068/2026/06/29/nfl-offseason-winners-losers-rams-ravens-packers/",
+    "https://www.nytimes.com/athletic/7402453/2026/06/27/oj-simpson-excluded-buffalo-bills-new-highmark-stadium/",
+    "https://www.nytimes.com/athletic/7398325/2026/06/26/brendan-sorsby-cfl-signing-ban/",
+    "https://www.nytimes.com/athletic/7397142/2026/06/26/famous-sporting-records-may-be-broken/",
+    "https://www.nytimes.com/athletic/7332227/2026/06/26/cj-gardner-johnson-bills-eagles-bears-lions-texans/",
+    "https://www.nytimes.com/athletic/7395439/2026/06/25/from-world-cup-star-to-the-nfl-plus-why-brendan-sorsbys-waiting/",
+    "https://www.nytimes.com/athletic/7394630/2026/06/25/2027-nfl-draft-date-washington-dc/",
+    "https://www.nytimes.com/athletic/7392706/2026/06/25/doug-martin-death-lawsuit-oakland-police-ambulance/",
+    "https://www.nytimes.com/athletic/7380517/2026/06/25/jaxson-dart-qb-giants-film-study/",
+    "https://www.nytimes.com/athletic/7392435/2026/06/24/terrion-arnold-arrest-robbery-kidnapping/",
+    "https://www.nytimes.com/athletic/7390859/2026/06/24/nfl-brendan-sorsby-supplemental-draft-nflpa-support/",
+    "https://www.nytimes.com/athletic/7387460/2026/06/24/bengals-offense-under-center-joe-burrow/",
+    "https://www.nytimes.com/athletic/7383903/2026/06/24/nfl-offensive-play-callers-2026/",
+    "https://www.nytimes.com/athletic/7388263/2026/06/23/nfl-supplemental-draft-explained-brendan-sorsby/",
+    "https://www.nytimes.com/athletic/7222929/2026/06/23/falcons-kyle-pitts-extension-tight-end/",
+    "https://www.nytimes.com/athletic/7387014/2026/06/23/geno-smith-jets-battery-investigation/",
+    "https://www.nytimes.com/athletic/7383712/2026/06/23/brendan-sorsby-no-nfl-supplemental-draft-2026/",
+    "https://www.nytimes.com/athletic/7383436/2026/06/23/49ers-ceo-al-guido-bay-area-super-bowl/",
+    "https://www.nytimes.com/athletic/7377554/2026/06/23/harry-kane-tom-brady-nfl-world-cup/",
+    "https://www.nytimes.com/athletic/7374332/2026/06/23/nfl-draft-2027-mailbag-sorsby-prospects/",
+    "https://www.nytimes.com/athletic/7384514/2026/06/23/antonio-super-bowl-alex-freeman-usmnt-world-cup/",
+    "https://www.nytimes.com/athletic/7383350/2026/06/22/nfl-training-camp-2026-schedule/",
+    "https://www.nytimes.com/athletic/7379705/2026/06/22/nfl-offseason-workouts-teams-observations-takeaways/",
+    "https://www.nytimes.com/athletic/7377988/2026/06/20/world-cup-scotland-party-boston-patriots-morocco/",
+    "https://www.nytimes.com/athletic/7368190/2026/06/19/nfl-fathers-day-sons-bloodline/"
   ]
 }
