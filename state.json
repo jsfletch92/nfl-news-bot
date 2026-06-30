@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 4,
+    "count": 6,
     "date": "2026-06-30"
   },
   "posted_stories": [
@@ -351,6 +351,37 @@
         "vegas"
       ],
       "ts": "2026-06-30T17:32:45.588676+00:00"
+    },
+    {
+      "tokens": [
+        "announce",
+        "farwell",
+        "heath",
+        "jaguars",
+        "promotions",
+        "shane",
+        "waldron"
+      ],
+      "ts": "2026-06-30T22:05:51.898315+00:00"
+    },
+    {
+      "tokens": [
+        "also",
+        "andrews",
+        "bolts",
+        "first",
+        "jake",
+        "job",
+        "keylan",
+        "mix",
+        "penning",
+        "rounder",
+        "rutledge",
+        "texans",
+        "trevor",
+        "vying"
+      ],
+      "ts": "2026-06-30T22:05:52.110740+00:00"
     }
   ],
   "queue": [],
@@ -980,6 +1011,53 @@
     "https://www.profootballrumors.com/?p=411368",
     "7bf90393-8e23-419a-8b12-d0f14875d81e",
     "05c6eaa4-2b86-4aa4-87a8-93936a922da0",
-    "3fd22fa7-ca2c-47d9-827d-8d66922d4868"
+    "3fd22fa7-ca2c-47d9-827d-8d66922d4868",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/demeco-ryans-c-j-stroud-nick-caley-communicating-much-better-this-year",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/titans-will-have-eight-open-training-camp-practices",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/chris-johnsons-als-fight-has-injected-some-hope-in-tim-shaws-als-fight",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/brendan-sorsby-and-nfl-agree-hell-be-eligible-for-2027-draft",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/brendan-sorsby-i-will-focus-on-my-recovery-and-preparing-for-the-2027-draft",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/inside-the-kyle-pitts-deal",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nik-bonittos-goal-is-simple-be-a-better-player-than-the-previous-year",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/drew-allar-excited-to-learn-from-aaron-rodgers",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/terrion-arnold-released-from-jail-after-posting-1-million-bond",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jaguars-announce-promotions-for-shane-waldron-heath-farwell",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ron-rivera-signs-three-year-deal-to-serve-as-cals-g-m",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/former-titans-scout-blaise-taylor-elects-not-to-testify-in-murder-case",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/cardinals-cb-will-johnson-we-have-a-good-opportunity-to-surprise-people",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/terrion-arnold-remains-in-jail-a-day-after-judge-granted-bond-request",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/deshaun-watson-returned-to-browns-facility-to-train-this-week",
+    "a25c6d96-f8c1-3609-aacb-877b61364bd6",
+    "8099d6c1-3e9f-3036-a99a-520a7f337aa8",
+    "2804a345-eff0-3b5b-a81b-aa5cffbe4cce",
+    "072bf410-d7e9-3eee-8585-7ffa4d704063",
+    "fcb5e496-3d49-36e4-9ef6-dbdf1d050a8c",
+    "da03090c-b700-3073-8ba9-e996d7a01813",
+    "b07110fe-689c-364b-a25a-8ea1c6179605",
+    "5393a3d9-ff46-3c6d-a04b-b485577bfcab",
+    "da43e515-2c36-3d98-ab74-108680931031",
+    "00c40753-a8c8-316c-a2f3-37325a560e32",
+    "fe1e5d7a-61be-342f-a9a1-13c0a516b1fb",
+    "7ab0b273-de95-339c-8020-c86c1ee6e1b1",
+    "7df5bbe0-e4f7-326e-b639-8a4e5cb8d6a7",
+    "b7511a46-e932-3429-8abe-07f6c29ef294",
+    "4eacf451-c8c2-362c-a90c-94d818ef1d8e",
+    "39333bb0-8ade-3992-b1cc-823b574d55a1",
+    "60d64c1f-a830-4fd8-bbd8-cd5a39a069c6",
+    "445436e9-4a19-3b33-b9f3-65f56cd982af",
+    "77c750ae-e66d-387c-a903-ac5b51ed49ca",
+    "906a012f-399b-39bc-9b2f-afa523b2726e",
+    "fc476ddc-a94f-3881-918c-822fd7aec904",
+    "e5e733a0-42fd-34b6-9e62-cff26df5328d",
+    "822a6554-b880-3bec-be31-c1a610bb34de",
+    "adc49908-550a-318f-b424-6c93d69e8098",
+    "9a2e8078-a2a2-3863-abfd-05dcc5dd8b38",
+    "https://www.profootballrumors.com/?p=411393",
+    "https://www.profootballrumors.com/?p=411390",
+    "https://www.profootballrumors.com/?p=411381",
+    "https://www.profootballrumors.com/?p=411378",
+    "d4f20a28-a9d1-47a3-a15f-36234b386e6b",
+    "https://www.nytimes.com/athletic/7410587/2026/06/30/life-as-a-rams-fan-nfl-sean-mcvay-offseason-myles-garrett/",
+    "https://www.nytimes.com/athletic/7406606/2026/06/30/brendan-sorsby-2027-nfl-draft/"
   ]
 }
