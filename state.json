@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 2,
+    "count": 4,
     "date": "2026-07-01"
   },
   "posted_stories": [
@@ -402,6 +402,34 @@
         "stay"
       ],
       "ts": "2026-07-01T10:57:12.713152+00:00"
+    },
+    {
+      "tokens": [
+        "acl",
+        "charbonnet",
+        "injury",
+        "progressing",
+        "seahawks",
+        "surgery",
+        "update",
+        "well",
+        "zach"
+      ],
+      "ts": "2026-07-01T18:24:08.994274+00:00"
+    },
+    {
+      "tokens": [
+        "connecting",
+        "death",
+        "dominican",
+        "espn",
+        "mike",
+        "pennel",
+        "removes",
+        "republic",
+        "woman"
+      ],
+      "ts": "2026-07-01T18:24:09.218509+00:00"
     }
   ],
   "queue": [],
@@ -1116,6 +1144,67 @@
     "https://www.nytimes.com/athletic/7410434/2026/07/01/brendan-sorsby-2027-nfl-draft-maurice-clarett/",
     "https://www.nytimes.com/athletic/7403779/2026/07/01/mental-performance-change-athletes-skills/",
     "https://www.nytimes.com/athletic/7386768/2026/07/01/breakout-defenses-cowboys-colts-bears/",
-    "https://www.nytimes.com/athletic/7411247/2026/06/30/lebron-james-lakers-social-media-job-pitches/"
+    "https://www.nytimes.com/athletic/7411247/2026/06/30/lebron-james-lakers-social-media-job-pitches/",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/caleb-williams-well-get-the-completion-percentage-up-make-everyone-feel-warm-and-lovely",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/u-s-returns-to-world-cup-action-tonight-at-levis-stadium-with-get-in-price-of-1-369",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/espn-retracts-its-latest-mike-pennel-story-admits-errors-in-the-reporting",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/new-york-times-says-internal-investigation-of-dianna-russini-is-still-ongoing",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/pft-has-been-with-nbc-for-17-years",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/eagles-want-jalen-carter-to-be-consistent-with-doing-little-things",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/dj-moore-buys-out-stores-stock-of-his-jerseys-leaves-them-for-fans-to-have-for-free",
+    "df238c0e-1a1d-3916-afc2-b538a948a446",
+    "cc372da9-a9b5-37c0-ad48-18effec2537c",
+    "785eeb6d-cd89-36d6-a4b2-21857c41c6f8",
+    "417d96e6-50dd-31da-8fa9-cdab3a644837",
+    "12627b3c-552e-340f-84c4-2ebba413fe79",
+    "89f6474a-7f27-388c-bf09-22caf7b45f15",
+    "ca7a7cf8-6677-35e7-9c62-9faa026a910d",
+    "559642f2-b4a6-3d1a-a112-49fa2ce8178d",
+    "f09576d4-17e5-3082-a197-715f68281d87",
+    "d8bab8fe-0c6d-3095-b4e3-cbf04921836a",
+    "ef0e7527-5e5a-3eab-a903-4b9dadff3769",
+    "ca1adac7-d51d-351f-bff0-2ce7435916b2",
+    "250dea93-b8ef-35e0-a817-6753eca3fc82",
+    "8bab8679-e4f1-3470-9441-f76cba911f8b",
+    "f01a30d5-478d-307b-bc9a-5ef91fa5b79a",
+    "728f2bd3-47f3-4bd7-b6d2-95ee4bd1d938",
+    "28a8548a-b4b9-37b5-95d9-eaf4a9cdafc4",
+    "b641c082-9e68-3b80-a4b3-e86040ca3001",
+    "44d9f057-143d-3e2d-80d3-27ab2af0893c",
+    "a78c1408-346f-318d-a9f5-1c0f49f4c43e",
+    "b4a53eb6-3c2d-3c53-87eb-a4a89deaa79a",
+    "ffd56971-ec67-3788-af91-ac8a2f8457d8",
+    "85ee43ca-3b12-3a9a-a947-0c9279c28bb3",
+    "b924f00c-e5fb-4e14-b993-8e335e1f8659",
+    "b808ba75-9080-3cb5-bd65-9001abd60ca9",
+    "https://www.profootballrumors.com/?p=411443",
+    "https://www.profootballrumors.com/?p=411444",
+    "https://www.profootballrumors.com/?p=410535",
+    "https://www.profootballrumors.com/?p=411438",
+    "https://www.profootballrumors.com/?p=411434",
+    "04fb73c8-c6b8-49a9-ba5a-550cff6fb5f7",
+    "d7c04a9d-3e09-4f88-85fe-ec75fa20e197",
+    "db12bd30-a6a6-4d2c-ba5e-7583a8415844",
+    "58198ebb-264e-4e8c-bdec-9bfba53c5cf7",
+    "03efead8-827a-4c79-84c1-d3cccab0ee48",
+    "b51488db-104b-4637-b9e7-c8bf26763366",
+    "e72b5271-f84f-407d-a2fb-aa6f64e2983d",
+    "3cc2247c-6eca-4a04-9b54-f8721453834c",
+    "8445a930-f44f-44d8-b33c-e3cd5a699675",
+    "7002ba25-c600-4f32-8e62-beff26e00a5b",
+    "791586fa-810f-47b1-8c29-d2eb951cd9fd",
+    "ea613694-1a23-49b5-ba97-f956dea0022d",
+    "31a9dba1-66af-4928-8c91-1c8c3ed3a0da",
+    "7fcc3991-5de6-4b8e-925a-ed3d8093b3f5",
+    "09bc7d0f-2c16-4a0a-8f12-5f2861599d91",
+    "8c26d519-f64f-4c0c-8395-715f0bfd77f4",
+    "8dc4d9f4-3e9e-4610-a8e0-7a91e405cbbe",
+    "889233ff-bf4d-48af-9b27-4e13d805a786",
+    "a179b887-6546-4617-b7ef-e4d45f7fb1eb",
+    "2664145a-83f8-4a4d-acc7-da279ebdc602",
+    "81461388-0cc9-45a1-a7a4-9c66c0b424cb",
+    "5cd36dfc-f56c-4684-8204-67097143b993",
+    "4a1974ff-23af-48c7-a3e4-74a46a8586e9",
+    "00e0137a-c680-4258-a5fe-54416b0ef38d"
   ]
 }
