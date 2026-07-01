@@ -1,6 +1,6 @@
 {
   "daily": {
-    "count": 4,
+    "count": 6,
     "date": "2026-07-01"
   },
   "posted_stories": [
@@ -430,9 +430,43 @@
         "woman"
       ],
       "ts": "2026-07-01T18:24:09.218509+00:00"
+    },
+    {
+      "tokens": [
+        "49ers",
+        "aiyuk",
+        "brandon",
+        "seeking",
+        "trade"
+      ],
+      "ts": "2026-07-01T22:51:51.447630+00:00"
+    },
+    {
+      "tokens": [
+        "full",
+        "gets",
+        "healthy",
+        "prepare",
+        "skattebo",
+        "summer"
+      ],
+      "ts": "2026-07-01T22:51:51.664598+00:00"
     }
   ],
-  "queue": [],
+  "queue": [
+    {
+      "category": "ROSTER",
+      "id": "4566972e75ae4d68b7ce7639416b2f18",
+      "outlet": "Pro Football Rumors",
+      "score": 2,
+      "text": "\ud83d\udea8 ROSTER NEWS: #Texans waived CB Ajani Carter and LB Xavier Thomas from injured reserve.\n\n[@PFRumors]",
+      "tokens": [
+        "minor",
+        "transactions"
+      ],
+      "ts": "2026-07-01T22:51:45.853218+00:00"
+    }
+  ],
   "seeded": true,
   "seen_entries": [
     "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/ryan-flournoy-soars-after-2025-season-i-know-i-belong",
@@ -1205,6 +1239,60 @@
     "81461388-0cc9-45a1-a7a4-9c66c0b424cb",
     "5cd36dfc-f56c-4684-8204-67097143b993",
     "4a1974ff-23af-48c7-a3e4-74a46a8586e9",
-    "00e0137a-c680-4258-a5fe-54416b0ef38d"
+    "00e0137a-c680-4258-a5fe-54416b0ef38d",
+    "US-EN-49218532",
+    "US-EN-49241315",
+    "US-EN-49236930",
+    "US-EN-49241520",
+    "US-EN-49226999",
+    "US-EN-49190613",
+    "US-EN-49234023",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/malachi-lawrence-working-to-come-out-of-the-shadows-into-the-spotlight",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/lions-officially-waive-terrion-arnold",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jury-convicts-blaise-taylor-of-murdering-his-pregnant-girlfriend",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/report-jonathan-jones-is-in-advanced-talks-to-leave-cbs-for-the-athletic",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/texans-g-ed-ingram-were-doing-a-complete-180-on-the-offensive-line",
+    "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/javonte-williams-on-new-contract-hard-work-paid-off-now-i-have-more-to-prove",
+    "52df9137-1088-33a2-83fc-d78a2713d567",
+    "338b164b-3bbf-3874-ad59-6c59dbd2bded",
+    "4f9164c7-d683-3c49-bec4-e8dc0bfbdc0a",
+    "ca4b0e76-2d68-388d-9610-1473ef8346d2",
+    "07a594ea-a06b-363a-bcaa-79ac5c4eedce",
+    "628b73cb-14f9-3ba7-b7ea-aa105e72bb15",
+    "5704b11b-c0b3-391a-929c-023870e6af3c",
+    "754fb9bb-3e6a-3b90-9e7e-c765bf81c33c",
+    "c435ef10-42de-3c15-93ad-9d7b0d4662ee",
+    "74649254-378d-384d-b656-5b9aa1283ba1",
+    "714be32f-adb9-38d4-bf25-4ee25bc45015",
+    "b96809ec-5785-3fa2-82f3-cd0432464609",
+    "960583c6-c66d-36ad-bdfe-987a59c6edc3",
+    "c957674f-2774-37df-afbe-b2d5a4543198",
+    "31afc6b4-c942-3d62-9447-c393515e9344",
+    "dc313756-ce90-30c1-b3f0-7cce3c97d801",
+    "9761eb57-6f69-3597-8b3e-701619d87fbb",
+    "f1424aec-8d72-3054-aef3-122756a3122d",
+    "712cd1c3-5b28-3a7a-b5d2-f3a0cff0f01d",
+    "https://sports.yahoo.com/video/taylor-lewan-could-return-nfl-174200942.html",
+    "https://www.profootballrumors.com/?p=411475",
+    "https://www.profootballrumors.com/?p=411471",
+    "https://www.profootballrumors.com/?p=411468",
+    "https://www.profootballrumors.com/?p=411466",
+    "bfbe5bd3-8e39-48fe-a780-6ac8acbaa1b8",
+    "4aa12f24-16e2-450f-b469-4b137e4e3698",
+    "f7335ffe-ab42-4eba-b0c6-3b03ec8d9903",
+    "ce79b8b0-fe81-4f78-83de-b0f4e16e6e29",
+    "a6fc8d57-44f1-4f57-8ca2-30de1de743a0",
+    "cf8da13f-d209-4d92-bb49-956014e12455",
+    "17484f0c-5d6c-431d-8f8c-f0fc54b8da35",
+    "b4cd8f8f-5c3d-4098-9e5b-53492a47bacf",
+    "e939502f-2fe6-4900-9368-5946a9ffb9b2",
+    "849bc8ac-8c1e-4a22-98f3-9e683ba68d8f",
+    "434f80d6-df7c-4f83-a31b-41a1581d09f0",
+    "32dcd689-8268-454c-b0ee-6e076f53965f",
+    "70e1a160-74b2-4b59-a65f-81e0e299e565",
+    "49812cba-1ee4-4699-a2c6-ce39aacfec5a",
+    "c2f432fa-1a9f-464f-a2d5-a99e5a17f89b",
+    "e8550868-e74f-44be-9e6c-523e974217de",
+    "https://www.nytimes.com/athletic/7412402/2026/07/01/calais-campbell-ciarre-brother-murder-charges/"
   ]
 }
